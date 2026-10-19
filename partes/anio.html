@@ -1,0 +1,65 @@
+<section id="anio" class="anio" aria-labelledby="t-anio">
+  <div class="anio-env">
+    <header class="anio-cab">
+      <p class="anio-antetitulo">Castiñeira es el castaño</p>
+      <h2 id="t-anio">Un año <em>en la casa</em></h2>
+      <p class="anio-intro">En Galicia el castaño marca el año: brota, florece, da castañas en octubre, se hace magosto en noviembre y se queda desnudo bajo la nieve. Elige un mes y mira cómo está la casa, qué cae del cielo y qué tienes cerca.</p>
+    </header>
+
+    <div class="anio-escena" id="anio-escena">
+      <img data-foto="nieve" class="anio-foto" data-est="0" sizes="(min-width: 1240px) 1180px, 100vw" alt="La casa y sus anexos de piedra cubiertos de nieve, entre ramas de roble">
+      <img data-foto="prado" class="anio-foto" data-est="1" sizes="(min-width: 1240px) 1180px, 100vw" alt="La casa de piedra entre prados verdes, con los árboles brotando">
+      <img data-foto="puerta" class="anio-foto" data-est="2" sizes="(min-width: 1240px) 1180px, 100vw" alt="Fachada de granito con la puerta roja y hortensias en flor, bajo un cielo azul">
+      <img data-foto="atardecer" class="anio-foto" data-est="3" sizes="(min-width: 1240px) 1180px, 100vw" alt="La casa al atardecer, con hojas de otoño anaranjadas">
+      <canvas class="anio-cielo" id="anio-cielo" aria-hidden="true"></canvas>
+      <div class="anio-carta" id="anio-carta" aria-live="polite" aria-atomic="true">
+        <p class="anio-est" id="anio-est">Otoño</p>
+        <h3 class="anio-mes" id="anio-mes">Octubre</h3>
+        <p class="anio-txt" id="anio-txt">Castañas y setas. Los castañares se ponen de oro y las viñas del Sil, de rojo. La mejor luz para las rutas del cañón.</p>
+        <ul class="anio-cerca" id="anio-cerca" aria-label="Cerca"><li>Recogida de setas</li><li>Santa Cristina · 38 min</li></ul>
+      </div>
+      <div class="anio-reloj" id="anio-reloj" role="group" aria-label="Meses del año">
+        <p class="anio-centro" aria-hidden="true"><span id="anio-reloj-mes">Octubre</span><small id="anio-reloj-est">Otoño</small></p>
+      </div>
+    </div>
+    <div class="anio-mandos">
+      <button type="button" class="anio-boton" id="anio-pasar" aria-pressed="false" hidden>Pasar el año</button>
+      <button type="button" class="anio-boton" id="anio-hoy" hidden>Ir a hoy</button>
+      <p class="anio-ayuda">Toca un mes en el reloj o recórrelos con las flechas del teclado.</p>
+    </div>
+
+    <!-- Los doce meses: de aquí lee el guion. Sin guion se ven como lista. -->
+    <ol class="anio-meses" id="anio-meses">
+      <li data-mes="0" data-cerca="Manzaneda · 62 min|Estufa en cada estancia"><b>Enero</b> · <i>nieve y estufa</i>. <span>Nieva en la sierra. La estufa de pellets, encendida en cada estancia, y la chimenea del salón común. Cabeza de Manzaneda, para esquiar, a una hora.</span></li>
+      <li data-mes="1" data-cerca="Retiros detox|Montederramo · 11 min"><b>Febrero</b> · <i>retiros y calma</i>. <span>Castaños sin hoja y prados con escarcha. Es el mes de los retiros: dietas detox con salidas guiadas, según el blog de Manolo (aún «próximamente»).</span></li>
+      <li data-mes="2" data-cerca="PR-G 4 · 9,2 km|Castro Caldelas · 15 min"><b>Marzo</b> · <i>el prado verdea</i>. <span>Se acaban las heladas y el prado empieza a verdear. Días más largos para las rutas cortas, como el Camiño Real a San Pedro de Rocas (9 km).</span></li>
+      <li data-mes="3" data-cerca="PR-G 213 · 21 km|Castro Caldelas · 15 min"><b>Abril</b> · <i>brotan los castaños</i>. <span>Brotan los robles y los castaños. La Ruta dos Bosques Máxicos sale de Castro Caldelas, a 15 minutos, y cruza soutos de castaños centenarios.</span></li>
+      <li data-mes="4" data-cerca="PR-G 177 · Mao|Parada de Sil · 28 min"><b>Mayo</b> · <i>ríos llenos</i>. <span>Los prados, altos y verdes, y los ríos llenos: el cañón del Mao con sus pasarelas y la fervenza do Cachón.</span></li>
+      <li data-mes="5" data-cerca="Rabacallos · 43 min|Catamarán por el Sil"><b>Junio</b> · <i>el castaño florece</i>. <span>El castaño florece y las tardes se alargan. El catamarán por el Sil y la playa fluvial de Rabacallos, en Parada de Sil.</span></li>
+      <li data-mes="6" data-cerca="Chavasqueira · 55 min|Doade · 30 min"><b>Julio</b> · <i>noches frescas y pozas</i>. <span>«La temperatura en verano, excelente», dice una reseña: a 917 metros las noches son frescas. Pozas termales, piragüismo y bodegas.</span></li>
+      <li data-mes="7" data-cerca="Montederramo · 11 min|Feria: 12 y 28"><b>Agosto</b> · <i>fiestas y feria</i>. <span>Fiestas de San Roque y la Asunción, del 14 al 16, y la feria de Montederramo los días 12 y 28 de cada mes.</span></li>
+      <li data-mes="8" data-cerca="Viñas · Doade 30 min|Fiesta · 8 sep"><b>Septiembre</b> · <i>vendimia y erizos</i>. <span>Vendimia en la Ribeira Sacra y primeros erizos en los castaños. La fiesta de los Remedios, el 8 de septiembre.</span></li>
+      <li data-mes="9" data-cerca="Recogida de setas|Santa Cristina · 38 min"><b>Octubre</b> · <i>castañas y setas</i>. <span>Castañas y setas. Los castañares se ponen de oro y las viñas del Sil, de rojo. La mejor luz para las rutas del cañón.</span></li>
+      <li data-mes="10" data-cerca="Magosto|Estufa de pellets"><b>Noviembre</b> · <i>magosto</i>. <span>El magosto: castañas asadas en la lumbre, hojarasca en los caminos y la estufa otra vez encendida.</span></li>
+      <li data-mes="11" data-cerca="Vales regalo|Manzaneda · 62 min"><b>Diciembre</b> · <i>vale regalo y nieve</i>. <span>Un vale regalo de la casa, que no caduca: noches, desayunos, cenas o actividades a medida. Y, a veces, la primera nieve.</span></li>
+    </ol>
+
+    <div class="anio-fichas">
+      <article class="anio-ficha">
+        <h3>Fiestas y feria</h3>
+        <dl class="anio-fechas">
+          <div><dt>12 y 28 de cada mes</dt><dd>Feria de Montederramo</dd></div>
+          <div><dt>14 al 16 de agosto</dt><dd>Fiestas de San Roque y la Asunción</dd></div>
+          <div><dt>8 de septiembre</dt><dd>Fiesta de los Remedios</dd></div>
+          <div><dt>Noviembre</dt><dd>Magosto: castañas asadas en la lumbre</dd></div>
+        </dl>
+      </article>
+      <article class="anio-ficha anio-ficha--vale">
+        <h3>Vales regalo</h3>
+        <blockquote class="anio-cita"><p>«Podemos hacerlo todo lo flexible que se quiera, números de noches, desayunos o cenas, actividades… y nos mandáis fotos y texto y os preparamos el vale que no caduca».</p></blockquote>
+        <p class="anio-ficha-pie">Del blog de la casa. Pídelo a Manolo: <span class="anio-tel">609 31 42 35</span> (teléfono y WhatsApp) o <span class="anio-tel">info@acastineira.com</span>.</p>
+      </article>
+    </div>
+    <p class="anio-fuente">Fotos de la casa en cada estación: Booking y el blog de la casa. Fiestas y feria: calendario de Montederramo, por confirmar con Manolo. Minutos en coche desde la casa: OSRM, por confirmar.</p>
+  </div>
+</section>

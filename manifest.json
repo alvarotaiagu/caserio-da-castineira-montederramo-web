@@ -1,0 +1,13 @@
+{
+ "name": "Caserío da Castiñeira",
+ "short_name": "A Castiñeira",
+ "lang": "es",
+ "start_url": "./",
+ "display": "browser",
+ "background_color": "#080d18",
+ "theme_color": "#080d18",
+ "icons": [
+  { "src": "img/marca/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+  { "src": "img/marca/icono-512.png", "sizes": "512x512", "type": "image/png" }
+ ]
+}

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banco de Secciones · Caserío da Castiñeira</title>
+<link rel="icon" href="data:,">
+<!-- GENERADO por pruebas/sec-comun.mjs (montarBanco): no editar a mano.
+     Carga las dos partes con los tokens y las letras de la web. ?sobria = html.densidad-sobria -->
+<script>
+  window.__globalesAntes = Object.getOwnPropertyNames(window);
+  if (/[?&]sobria/.test(location.search)) document.documentElement.classList.add('densidad-sobria');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Reenie+Beanie&display=swap" media="print" onload="this.media='all'">
+<style>
+  /* tokens de la web (ENCARGO.md → Identidad) y base mínima */
+  :root { --noche: #080d18; --noche-2: #101a2e; --alba: #f0a36a; --alba-texto: #a2501c; --luz: #f3e8d8; --cal: #f1ebdd; --granito: #1f1e1c;
+    --mostaza: #e3a92a; --teja: #c2502d; --verde: #8da02c; --puerta: #a3281b; --papel: #f1e9d6; --tinta: #1c1b19; --musgo: #5aa646; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
+  body { margin: 0; background: var(--cal); color: var(--granito); font: 400 17px/1.6 "Geist", system-ui, sans-serif; overflow-x: clip; }
+  img { max-width: 100%; height: auto; display: block; }
+  picture { display: block; }
+  h1, h2, h3, p, figure, blockquote, dl, dd { margin: 0; }
+  button { font: inherit; color: inherit; }
+  [hidden] { display: none !important; }
+  :focus { outline: none; }
+  :focus-visible { outline: 2px solid var(--alba-texto); outline-offset: 3px; }
+  .relleno { min-height: 260vh; padding: 64px 6vw; background: var(--noche); color: var(--luz); font: 400 clamp(32px, 5vw, 60px)/1.1 "Instrument Serif", serif; }
+  .relleno.fin { min-height: 60vh; background: var(--cal); color: var(--granito); }
+</style>
+<link rel="stylesheet" href="../css/mapa.css">
+<link rel="stylesheet" href="../css/anio.css">
+</head>
+<body>
+<div class="relleno"><p>Banco de Secciones. Más abajo: «Dibuja mi mapa» y «Un año en la casa».</p></div>
+<section id="mapa" class="mapa" aria-labelledby="t-mapa">
+  <div class="mapa-env">
+    <header class="mapa-cab">
+      <p class="mapa-antetitulo">Las rutas de Manolo</p>
+      <h2 id="t-mapa">Dime cuántos días tienes y <em>te dibujo el mapa</em></h2>
+      <p class="mapa-intro">Manolo camina y corre estos montes, y a cada huésped le dibuja a mano su mapa. Esto es un adelanto con las siete rutas circulares que eligió en su blog entre las de la Ribeira Sacra: di cuántos días tienes, cuánto te apetece andar y qué te gusta, y el mapa se dibuja sobre el relieve de la comarca. Luego, llévatelo.</p>
+    </header>
+
+    <div class="mapa-taller">
+      <div class="mapa-hoja-col">
+        <div class="mapa-pliego" id="mapa-pliego">
+          <svg class="mapa-svg" id="mapa-svg" viewBox="0 0 1800 1324" role="img" aria-labelledby="mapa-svg-titulo"><title id="mapa-svg-titulo">Mapa dibujado de tu estancia: las rutas elegidas sobre el relieve de la Ribeira Sacra, con la casa marcada</title></svg>
+          <p class="mapa-carga" id="mapa-carga">Desplegando el papel…</p>
+          <i class="mapa-cinta mapa-cinta--1" aria-hidden="true"></i><i class="mapa-cinta mapa-cinta--2" aria-hidden="true"></i>
+        </div>
+        <figure class="mapa-perfil">
+          <figcaption class="mapa-perfil-cab"><b id="mapa-perfil-tit">Perfil de la ruta</b><span id="mapa-perfil-dato">Elige un plan y aparece aquí</span></figcaption>
+          <div class="mapa-perfil-zona" id="mapa-perfil-zona" tabindex="0" role="slider" aria-label="Recorrer el perfil de altura (flechas a izquierda y derecha)" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="Sin ruta">
+            <svg class="mapa-perfil-svg" id="mapa-perfil-svg" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"></svg>
+          </div>
+          <p class="mapa-perfil-ayuda">Pasa el dedo o el ratón por el perfil: el punto rojo te dice por dónde vas en el mapa.</p>
+        </figure>
+      </div>
+
+      <div class="mapa-mandos">
+        <fieldset class="mapa-grupo">
+          <legend>Días</legend>
+          <div class="mapa-fila" data-grupo="dias">
+            <button type="button" class="mapa-opcion" data-valor="1" aria-pressed="false">1 día</button>
+            <button type="button" class="mapa-opcion" data-valor="2" aria-pressed="true">2 días</button>
+            <button type="button" class="mapa-opcion" data-valor="3" aria-pressed="false">3 días</button>
+          </div>
+        </fieldset>
+        <fieldset class="mapa-grupo">
+          <legend>Cuánto te apetece andar</legend>
+          <div class="mapa-fila" data-grupo="nivel">
+            <button type="button" class="mapa-opcion" data-valor="suave" aria-pressed="false">Suave</button>
+            <button type="button" class="mapa-opcion" data-valor="normal" aria-pressed="true">Normal</button>
+            <button type="button" class="mapa-opcion" data-valor="fuerte" aria-pressed="false">Con ganas</button>
+          </div>
+        </fieldset>
+        <fieldset class="mapa-grupo">
+          <legend>Me apetece</legend>
+          <div class="mapa-fila" data-grupo="gustos">
+            <button type="button" class="mapa-opcion" data-valor="bosque" aria-pressed="false">Bosques de cuento</button>
+            <button type="button" class="mapa-opcion" data-valor="mirador" aria-pressed="true">Miradores del cañón</button>
+            <button type="button" class="mapa-opcion" data-valor="monasterio" aria-pressed="true">Monasterios</button>
+            <button type="button" class="mapa-opcion" data-valor="agua" aria-pressed="false">Agua y cascadas</button>
+            <button type="button" class="mapa-opcion" data-valor="vina" aria-pressed="false">Viñas</button>
+          </div>
+        </fieldset>
+
+        <p class="mapa-resumen" id="mapa-resumen" aria-live="polite"><span class="mapa-total" id="mapa-total"></span><span class="mapa-oculto" id="mapa-dicho"></span></p>
+        <ol class="mapa-plan" id="mapa-plan" aria-label="Tu plan, día a día"></ol>
+
+      </div>
+
+      <div class="mapa-pie">
+        <div class="mapa-acciones">
+          <button type="button" class="mapa-accion" id="mapa-bajar" disabled>Descargar mi mapa (PNG)</button>
+          <button type="button" class="mapa-accion mapa-accion--sec" id="mapa-ver" disabled>Verlo en grande</button>
+        </div>
+        <p class="mapa-fuente">Kilómetros, desnivel y descripciones: Manolo Rolán, en su blog turismoruralvegano.com (21-06-2021). Trazados: © colaboradores de OpenStreetMap, aproximados (alguna variante no está). Relieve y alturas: MDT25 © Instituto Geográfico Nacional (CC BY 4.0). Minutos en coche desde la casa: OSRM, por confirmar. Es un ejemplo: el mapa de verdad te lo dibuja Manolo.</p>
+      </div>
+    </div>
+
+    <details class="mapa-rutas">
+      <summary>Las siete rutas de Manolo y los días sin mochila, en texto</summary>
+      <ol class="mapa-rutas-lista">
+        <li data-ruta="PR-G 4" data-nombre="Camiño Real de San Pedro de Rocas" data-salida="Esgos" data-km="9.2" data-desnivel="319" data-gustos="monasterio bosque">
+          <h3>PR-G 4 · Camiño Real de San Pedro de Rocas</h3>
+          <p>Caminos medievales por bosque autóctono hasta San Pedro de Rocas, el monasterio románico excavado en la montaña. La única que no toca el cañón.</p>
+          <p class="mapa-datos">Sale de Esgos · 9,2 km · +319 m</p>
+        </li>
+        <li data-ruta="PR-G 178" data-nombre="Maquino Largaño" data-salida="Luíntra" data-km="15.3" data-desnivel="533" data-gustos="monasterio mirador bosque">
+          <h3>PR-G 178 · Maquino Largaño</h3>
+          <p>Grandes rocas, un sendero medieval entre robles y castaños hacia San Estevo y el mirador de Penedos do Castro, sobre el cañón y el monasterio.</p>
+          <p class="mapa-datos">Sale de Luíntra · 15,3 km · +533 m</p>
+        </li>
+        <li data-ruta="PR-G 98" data-nombre="Cañón do Sil · Santa Cristina" data-salida="Parada de Sil" data-km="17.6" data-desnivel="842" data-gustos="monasterio mirador agua bosque">
+          <h3>PR-G 98 · Cañón do Sil · Santa Cristina</h3>
+          <p>La clásica del cañón, en dos bucles que se pueden hacer por separado: castaños, aldeas, molinos, cascadas y el monasterio de Santa Cristina.</p>
+          <p class="mapa-datos">Sale de Parada de Sil · 17,6 km · +842 m</p>
+        </li>
+        <li data-ruta="PR-G 177" data-nombre="Cañón do Río Mao" data-salida="Parada de Sil" data-km="17.4" data-desnivel="754" data-gustos="agua mirador">
+          <h3>PR-G 177 · Cañón do Río Mao</h3>
+          <p>El cañón del Mao: un canal de piedra que vuela sobre el cañón, la necrópolis de San Lourenzo y un kilómetro y medio de pasarelas.</p>
+          <p class="mapa-datos">Sale de Parada de Sil · 17,4 km · +754 m</p>
+        </li>
+        <li data-ruta="PR-G 213" data-nombre="Ruta dos Bosques Máxicos" data-salida="Castro Caldelas" data-km="21" data-desnivel="736" data-gustos="bosque agua monasterio">
+          <h3>PR-G 213 · Ruta dos Bosques Máxicos</h3>
+          <p>Bosques de cuento, los monasterios de Camba y San Paio, molinos, el puente de Lumeares y la cascada do Cachón. Sale de la villa del castillo.</p>
+          <p class="mapa-datos">Sale de Castro Caldelas · 21 km · +736 m</p>
+        </li>
+        <li data-ruta="PR-G 237" data-nombre="Penas de Matacás" data-salida="Castro Caldelas" data-km="21" data-desnivel="1023" data-gustos="mirador vina">
+          <h3>PR-G 237 · Penas de Matacás</h3>
+          <p>Viñas de pendientes imposibles en la costa de Alais, el mirador de las Penas de Matacás sobre el Sil y la cueva de uno de los últimos maquis.</p>
+          <p class="mapa-datos">Sale de Castro Caldelas · 21 km (18 sin el embarcadero) · +1.023 m</p>
+        </li>
+        <li data-ruta="PR-G 180" data-nombre="A Cubela" data-salida="Ribas de Sil (Lugo)" data-km="13.39" data-desnivel="721" data-gustos="mirador">
+          <h3>PR-G 180 · A Cubela</h3>
+          <p>El meandro de A Cubela, donde el río casi da la vuelta, junto a una antigua mina romana. La única de la provincia de Lugo.</p>
+          <p class="mapa-datos">Sale de Ribas de Sil (Lugo) · 13,39 km · +721 m</p>
+        </li>
+        <li data-descanso="pueblos" data-nombre="Un día sin mochila: pueblos y monasterios" data-lugares="montederramo:Mosteiro de Montederramo castro_caldelas:Castro Caldelas san_paio:San Paio de Abeleda">
+          <h3>Un día sin mochila: pueblos y monasterios</h3>
+          <p>El mosteiro de Montederramo, el castillo de Castro Caldelas y San Paio de Abeleda, con calma.</p>
+          <p class="mapa-datos">Montederramo · 11 min · Castro Caldelas · 15 min · San Paio de Abeleda · 26 min, en coche</p>
+        </li>
+        <li data-descanso="termas" data-nombre="Un día de termas">
+          <h3>Un día de termas</h3>
+          <p>Pozas de agua caliente al aire libre en Ourense: Chavasqueira, Outariz, As Burgas. Fuera del mapa, a unos 55 minutos.</p>
+          <p class="mapa-datos">Chavasqueira y As Burgas · 55 min, en coche</p>
+        </li>
+      </ol>
+    </details>
+
+    <dialog class="mapa-visor" id="mapa-visor" aria-labelledby="mapa-visor-tit">
+      <h3 class="mapa-visor-tit" id="mapa-visor-tit">Tu mapa</h3>
+      <img class="mapa-visor-img" id="mapa-visor-img" alt="Tu mapa dibujado: las rutas elegidas sobre el relieve, con la leyenda y la casa marcada">
+      <div class="mapa-visor-pie">
+        <a class="mapa-accion" id="mapa-visor-bajar" download="mapa-caserio-da-castineira.png" href="#">Descargar (PNG)</a>
+        <button type="button" class="mapa-accion mapa-accion--sec" id="mapa-visor-cerrar">Cerrar</button>
+      </div>
+    </dialog>
+  </div>
+</section>
+<section id="anio" class="anio" aria-labelledby="t-anio">
+  <div class="anio-env">
+    <header class="anio-cab">
+      <p class="anio-antetitulo">Castiñeira es el castaño</p>
+      <h2 id="t-anio">Un año <em>en la casa</em></h2>
+      <p class="anio-intro">En Galicia el castaño marca el año: brota, florece, da castañas en octubre, se hace magosto en noviembre y se queda desnudo bajo la nieve. Elige un mes y mira cómo está la casa, qué cae del cielo y qué tienes cerca.</p>
+    </header>
+
+    <div class="anio-escena" id="anio-escena">
+      <picture data-foto="nieve"><source type="image/avif" srcset="../img/fotos/nieve-480.avif 480w, ../img/fotos/nieve-800.avif 800w, ../img/fotos/nieve-1200.avif 1200w" sizes="(min-width: 1240px) 1180px, 100vw"><source type="image/webp" srcset="../img/fotos/nieve-480.webp 480w, ../img/fotos/nieve-800.webp 800w, ../img/fotos/nieve-1200.webp 1200w" sizes="(min-width: 1240px) 1180px, 100vw"><img src="../img/fotos/nieve-800.jpg" srcset="../img/fotos/nieve-480.jpg 480w, ../img/fotos/nieve-800.jpg 800w, ../img/fotos/nieve-1200.jpg 1200w" sizes="(min-width: 1240px) 1180px, 100vw" width="800" height="600" class="anio-foto" data-est="0" alt="La casa y sus anexos de piedra cubiertos de nieve, entre ramas de roble" loading="lazy" decoding="async"></picture>
+      <picture data-foto="prado"><source type="image/avif" srcset="../img/fotos/prado-480.avif 480w, ../img/fotos/prado-800.avif 800w, ../img/fotos/prado-1201.avif 1201w" sizes="(min-width: 1240px) 1180px, 100vw"><source type="image/webp" srcset="../img/fotos/prado-480.webp 480w, ../img/fotos/prado-800.webp 800w, ../img/fotos/prado-1201.webp 1201w" sizes="(min-width: 1240px) 1180px, 100vw"><img src="../img/fotos/prado-800.jpg" srcset="../img/fotos/prado-480.jpg 480w, ../img/fotos/prado-800.jpg 800w, ../img/fotos/prado-1201.jpg 1201w" sizes="(min-width: 1240px) 1180px, 100vw" width="800" height="600" class="anio-foto" data-est="1" alt="La casa de piedra entre prados verdes, con los árboles brotando" loading="lazy" decoding="async"></picture>
+      <picture data-foto="puerta"><source type="image/avif" srcset="../img/fotos/puerta-480.avif 480w, ../img/fotos/puerta-800.avif 800w, ../img/fotos/puerta-1200.avif 1200w, ../img/fotos/puerta-1280.avif 1280w" sizes="(min-width: 1240px) 1180px, 100vw"><source type="image/webp" srcset="../img/fotos/puerta-480.webp 480w, ../img/fotos/puerta-800.webp 800w, ../img/fotos/puerta-1200.webp 1200w, ../img/fotos/puerta-1280.webp 1280w" sizes="(min-width: 1240px) 1180px, 100vw"><img src="../img/fotos/puerta-800.jpg" srcset="../img/fotos/puerta-480.jpg 480w, ../img/fotos/puerta-800.jpg 800w, ../img/fotos/puerta-1200.jpg 1200w, ../img/fotos/puerta-1280.jpg 1280w" sizes="(min-width: 1240px) 1180px, 100vw" width="800" height="530" class="anio-foto" data-est="2" alt="Fachada de granito con la puerta roja y hortensias en flor, bajo un cielo azul" loading="lazy" decoding="async"></picture>
+      <picture data-foto="atardecer"><source type="image/avif" srcset="../img/fotos/atardecer-480.avif 480w, ../img/fotos/atardecer-800.avif 800w, ../img/fotos/atardecer-1080.avif 1080w" sizes="(min-width: 1240px) 1180px, 100vw"><source type="image/webp" srcset="../img/fotos/atardecer-480.webp 480w, ../img/fotos/atardecer-800.webp 800w, ../img/fotos/atardecer-1080.webp 1080w" sizes="(min-width: 1240px) 1180px, 100vw"><img src="../img/fotos/atardecer-800.jpg" srcset="../img/fotos/atardecer-480.jpg 480w, ../img/fotos/atardecer-800.jpg 800w, ../img/fotos/atardecer-1080.jpg 1080w" sizes="(min-width: 1240px) 1180px, 100vw" width="800" height="370" class="anio-foto" data-est="3" alt="La casa al atardecer, con hojas de otoño anaranjadas" loading="lazy" decoding="async"></picture>
+      <canvas class="anio-cielo" id="anio-cielo" aria-hidden="true"></canvas>
+      <div class="anio-carta" id="anio-carta" aria-live="polite" aria-atomic="true">
+        <p class="anio-est" id="anio-est">Otoño</p>
+        <h3 class="anio-mes" id="anio-mes">Octubre</h3>
+        <p class="anio-txt" id="anio-txt">Castañas y setas. Los castañares se ponen de oro y las viñas del Sil, de rojo. La mejor luz para las rutas del cañón.</p>
+        <ul class="anio-cerca" id="anio-cerca" aria-label="Cerca"><li>Recogida de setas</li><li>Santa Cristina · 38 min</li></ul>
+      </div>
+      <div class="anio-reloj" id="anio-reloj" role="group" aria-label="Meses del año">
+        <p class="anio-centro" aria-hidden="true"><span id="anio-reloj-mes">Octubre</span><small id="anio-reloj-est">Otoño</small></p>
+      </div>
+    </div>
+    <div class="anio-mandos">
+      <button type="button" class="anio-boton" id="anio-pasar" aria-pressed="false" hidden>Pasar el año</button>
+      <button type="button" class="anio-boton" id="anio-hoy" hidden>Ir a hoy</button>
+      <p class="anio-ayuda">Toca un mes en el reloj o recórrelos con las flechas del teclado.</p>
+    </div>
+
+    <!-- Los doce meses: de aquí lee el guion. Sin guion se ven como lista. -->
+    <ol class="anio-meses" id="anio-meses">
+      <li data-mes="0" data-cerca="Manzaneda · 62 min|Estufa en cada estancia"><b>Enero</b> · <i>nieve y estufa</i>. <span>Nieva en la sierra. La estufa de pellets, encendida en cada estancia, y la chimenea del salón común. Cabeza de Manzaneda, para esquiar, a una hora.</span></li>
+      <li data-mes="1" data-cerca="Retiros detox|Montederramo · 11 min"><b>Febrero</b> · <i>retiros y calma</i>. <span>Castaños sin hoja y prados con escarcha. Es el mes de los retiros: dietas detox con salidas guiadas, según el blog de Manolo (aún «próximamente»).</span></li>
+      <li data-mes="2" data-cerca="PR-G 4 · 9,2 km|Castro Caldelas · 15 min"><b>Marzo</b> · <i>el prado verdea</i>. <span>Se acaban las heladas y el prado empieza a verdear. Días más largos para las rutas cortas, como el Camiño Real a San Pedro de Rocas (9 km).</span></li>
+      <li data-mes="3" data-cerca="PR-G 213 · 21 km|Castro Caldelas · 15 min"><b>Abril</b> · <i>brotan los castaños</i>. <span>Brotan los robles y los castaños. La Ruta dos Bosques Máxicos sale de Castro Caldelas, a 15 minutos, y cruza soutos de castaños centenarios.</span></li>
+      <li data-mes="4" data-cerca="PR-G 177 · Mao|Parada de Sil · 28 min"><b>Mayo</b> · <i>ríos llenos</i>. <span>Los prados, altos y verdes, y los ríos llenos: el cañón del Mao con sus pasarelas y la fervenza do Cachón.</span></li>
+      <li data-mes="5" data-cerca="Rabacallos · 43 min|Catamarán por el Sil"><b>Junio</b> · <i>el castaño florece</i>. <span>El castaño florece y las tardes se alargan. El catamarán por el Sil y la playa fluvial de Rabacallos, en Parada de Sil.</span></li>
+      <li data-mes="6" data-cerca="Chavasqueira · 55 min|Doade · 30 min"><b>Julio</b> · <i>noches frescas y pozas</i>. <span>«La temperatura en verano, excelente», dice una reseña: a 917 metros las noches son frescas. Pozas termales, piragüismo y bodegas.</span></li>
+      <li data-mes="7" data-cerca="Montederramo · 11 min|Feria: 12 y 28"><b>Agosto</b> · <i>fiestas y feria</i>. <span>Fiestas de San Roque y la Asunción, del 14 al 16, y la feria de Montederramo los días 12 y 28 de cada mes.</span></li>
+      <li data-mes="8" data-cerca="Viñas · Doade 30 min|Fiesta · 8 sep"><b>Septiembre</b> · <i>vendimia y erizos</i>. <span>Vendimia en la Ribeira Sacra y primeros erizos en los castaños. La fiesta de los Remedios, el 8 de septiembre.</span></li>
+      <li data-mes="9" data-cerca="Recogida de setas|Santa Cristina · 38 min"><b>Octubre</b> · <i>castañas y setas</i>. <span>Castañas y setas. Los castañares se ponen de oro y las viñas del Sil, de rojo. La mejor luz para las rutas del cañón.</span></li>
+      <li data-mes="10" data-cerca="Magosto|Estufa de pellets"><b>Noviembre</b> · <i>magosto</i>. <span>El magosto: castañas asadas en la lumbre, hojarasca en los caminos y la estufa otra vez encendida.</span></li>
+      <li data-mes="11" data-cerca="Vales regalo|Manzaneda · 62 min"><b>Diciembre</b> · <i>vale regalo y nieve</i>. <span>Un vale regalo de la casa, que no caduca: noches, desayunos, cenas o actividades a medida. Y, a veces, la primera nieve.</span></li>
+    </ol>
+
+    <div class="anio-fichas">
+      <article class="anio-ficha">
+        <h3>Fiestas y feria</h3>
+        <dl class="anio-fechas">
+          <div><dt>12 y 28 de cada mes</dt><dd>Feria de Montederramo</dd></div>
+          <div><dt>14 al 16 de agosto</dt><dd>Fiestas de San Roque y la Asunción</dd></div>
+          <div><dt>8 de septiembre</dt><dd>Fiesta de los Remedios</dd></div>
+          <div><dt>Noviembre</dt><dd>Magosto: castañas asadas en la lumbre</dd></div>
+        </dl>
+      </article>
+      <article class="anio-ficha anio-ficha--vale">
+        <h3>Vales regalo</h3>
+        <blockquote class="anio-cita"><p>«Podemos hacerlo todo lo flexible que se quiera, números de noches, desayunos o cenas, actividades… y nos mandáis fotos y texto y os preparamos el vale que no caduca».</p></blockquote>
+        <p class="anio-ficha-pie">Del blog de la casa. Pídelo a Manolo: <span class="anio-tel">609 31 42 35</span> (teléfono y WhatsApp) o <span class="anio-tel">info@acastineira.com</span>.</p>
+      </article>
+    </div>
+    <p class="anio-fuente">Fotos de la casa en cada estación: Booking y el blog de la casa. Fiestas y feria: calendario de Montederramo, por confirmar con Manolo. Minutos en coche desde la casa: OSRM, por confirmar.</p>
+  </div>
+</section>
+<div class="relleno fin"><p>Fin del banco.</p></div>
+<script src="../js/mapa.js" defer></script>
+<script src="../js/anio.js" defer></script>
+</body>
+</html>

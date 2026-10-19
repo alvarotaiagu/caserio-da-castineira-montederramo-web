@@ -1,0 +1,129 @@
+/* «Un año en la casa» (agente Secciones). Todo bajo #anio. Tokens de la web con su valor de reserva.
+   Letras: Instrument Serif (titulares y meses), Geist (texto), Geist Mono (minutos y fechas). */
+#anio {
+  --a-noche: var(--noche, #080d18);
+  --a-noche-2: var(--noche-2, #101a2e);
+  --a-luz: var(--luz, #f3e8d8);
+  --a-luz-2: #c9bfae;                       /* 9,5:1 sobre noche-2 */
+  --a-alba: var(--alba, #f0a36a);
+  --a-linea: rgb(243 232 216 / .18);
+  --a-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --a-sans: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --a-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  position: relative;
+  background: var(--a-noche-2);
+  color: var(--a-luz);
+  font-family: var(--a-sans);
+  padding-block: clamp(64px, 10vw, 128px);
+  overflow-x: clip;
+}
+#anio .anio-env { max-width: 1240px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 48px); }
+
+/* ---- cabecera ---- */
+#anio .anio-cab { display: grid; gap: 14px; max-width: 52rem; margin-bottom: clamp(28px, 4vw, 44px); }
+#anio .anio-antetitulo { margin: 0; font: 500 12.5px/1.2 var(--a-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--a-alba); }
+#anio h2 { margin: 0; font: 400 clamp(2.4rem, 6vw, 4.8rem)/1 var(--a-serif); letter-spacing: -.01em; text-wrap: balance; }
+#anio h2 em { font-style: italic; color: var(--a-alba); }
+#anio .anio-intro { margin: 0; font-size: clamp(16px, 1.6vw, 18px); line-height: 1.6; max-width: 60ch; color: var(--a-luz); }
+
+/* ---- la escena ---- */
+#anio .anio-escena {
+  --est: #ee9a4a;
+  position: relative; isolation: isolate; overflow: hidden; container-type: inline-size;
+  aspect-ratio: 16 / 9; max-height: min(82svh, 760px); min-height: 460px; width: 100%;
+  border-radius: 10px; background: #141c12; color: #f3efe2;
+}
+#anio .anio-escena picture { display: contents; }
+#anio .anio-foto { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; opacity: 0; z-index: -4; filter: saturate(.92); }
+#anio .anio-foto[data-est="0"] { object-position: 40% 50%; }
+#anio .anio-foto[data-est="1"] { object-position: 50% 42%; }
+#anio .anio-foto[data-est="2"] { object-position: 30% 60%; }
+#anio .anio-foto[data-est="3"] { object-position: 72% 50%; }
+#anio .anio-escena::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(90deg, rgb(8 13 10 / .86), rgb(8 13 10 / .42) 52%, rgb(8 13 10 / .08)), linear-gradient(0deg, rgb(8 13 10 / .62), transparent 42%);
+}
+#anio .anio-cielo { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+#anio[data-cielo="quieto"] .anio-cielo { visibility: hidden; }
+
+#anio .anio-carta { position: absolute; left: 3.6cqi; bottom: 3.6cqi; z-index: 2; display: grid; gap: 1.2cqi; max-width: min(56ch, 50%); }
+#anio .anio-est { margin: 0; font: 500 clamp(11px, 1.15cqi, 13px)/1 var(--a-mono); letter-spacing: .2em; text-transform: uppercase; color: var(--est); }
+#anio .anio-mes { margin: 0; font: 400 clamp(44px, 7.4cqi, 104px)/.92 var(--a-serif); letter-spacing: -.015em; text-shadow: 0 2px 24px rgb(0 0 0 / .35); }
+#anio .anio-txt { margin: 0; font-size: clamp(14.5px, 1.5cqi, 18px); line-height: 1.55; text-shadow: 0 1px 10px rgb(0 0 0 / .5); }
+#anio .anio-cerca { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+#anio .anio-cerca li { font: 500 clamp(12px, 1.15cqi, 13.5px)/1 var(--a-mono); padding: 8px 12px; border-radius: 999px; background: rgb(10 14 12 / .55); border: 1px solid rgb(243 239 226 / .3); }
+
+/* ---- el reloj de doce meses ---- */
+#anio .anio-reloj { --R: 120px; --b: clamp(34px, 4.6cqi, 50px); position: absolute; right: 3.2cqi; top: 50%; z-index: 2; transform: translateY(-50%); width: min(31cqi, 320px); aspect-ratio: 1; }
+#anio .anio-reloj::before { content: ""; position: absolute; inset: 9%; border-radius: 50%; border: 1px dashed rgb(243 239 226 / .3); pointer-events: none; }
+#anio .anio-reloj::after { content: ""; position: absolute; inset: 25%; border-radius: 50%; background: radial-gradient(closest-side, rgb(8 13 10 / .6), rgb(8 13 10 / .35) 65%, transparent); pointer-events: none; z-index: -1; }
+#anio .anio-centro { position: absolute; inset: 24%; margin: 0; display: grid; place-content: center; text-align: center; font: italic 400 clamp(20px, 3.2cqi, 42px)/1.02 var(--a-serif); text-shadow: 0 1px 12px rgb(0 0 0 / .55); }
+#anio .anio-centro small { display: block; margin-top: 6px; font: normal 500 clamp(10px, 1cqi, 12px)/1 var(--a-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--est); }
+#anio .anio-hora {
+  position: absolute; left: 50%; top: 50%; width: var(--b); height: var(--b); margin: calc(var(--b) / -2) 0 0 calc(var(--b) / -2); padding: 0;
+  border-radius: 50%; border: 1.5px solid rgb(243 239 226 / .5); background: rgb(8 13 10 / .6); color: #f3efe2;
+  font: 500 clamp(11px, 1.25cqi, 14px)/1 var(--a-sans); cursor: pointer;
+  transform: rotate(var(--a)) translateY(calc(var(--R) * -1)) rotate(calc(var(--a) * -1));
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  transition: background-color .3s, color .3s, border-color .3s;
+}
+#anio .anio-hora::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; }
+#anio .anio-hora:hover { border-color: #fff; }
+#anio .anio-hora[aria-pressed="true"] { background: var(--est); color: #14180f; border-color: #fff; font-weight: 600; }
+#anio .anio-hora--hoy::before { content: "hoy"; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 3px; font: 500 10px/1 var(--a-mono); color: #f3efe2; text-shadow: 0 1px 4px rgb(0 0 0 / .8); }
+
+/* ---- mandos ---- */
+#anio .anio-mandos { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin-top: 14px; }
+#anio .anio-boton {
+  min-height: 44px; padding: 10px 18px; border-radius: 999px; border: 1.5px solid rgb(243 232 216 / .45); background: transparent;
+  color: var(--a-luz); font: 500 15px/1.1 var(--a-sans); cursor: pointer; transition: background-color .2s, color .2s, border-color .2s;
+}
+#anio .anio-boton:hover, #anio .anio-boton[aria-pressed="true"] { background: var(--a-luz); color: var(--a-noche); border-color: var(--a-luz); }
+#anio .anio-boton[hidden] { display: none; }
+#anio .anio-ayuda { margin: 0; font-size: 13.5px; color: var(--a-luz-2); }
+
+/* ---- la lista de meses: se ve solo sin guion ---- */
+#anio .anio-meses { margin: 22px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 12px 28px; font-size: 15px; line-height: 1.55; }
+#anio .anio-meses b { font: 400 22px/1 var(--a-serif); }
+#anio .anio-meses i { color: var(--a-alba); }
+#anio.anio--vivo .anio-meses { display: none; }
+#anio:not(.anio--vivo) .anio-carta, #anio:not(.anio--vivo) .anio-reloj, #anio:not(.anio--vivo) .anio-ayuda { display: none; }
+#anio:not(.anio--vivo) .anio-foto[data-est="3"] { opacity: 1; }
+
+/* ---- fiestas y vales ---- */
+#anio .anio-fichas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px; margin-top: clamp(28px, 4vw, 44px); }
+#anio .anio-ficha { display: grid; gap: 12px; align-content: start; padding: clamp(18px, 2.4vw, 26px); border-radius: 10px; background: rgb(243 232 216 / .05); border: 1px solid var(--a-linea); }
+#anio .anio-ficha h3 { margin: 0; font: 400 clamp(26px, 2.6vw, 32px)/1.05 var(--a-serif); }
+#anio .anio-fechas { margin: 0; display: grid; gap: 10px; }
+#anio .anio-fechas div { display: grid; grid-template-columns: minmax(9.5em, auto) 1fr; gap: 4px 16px; align-items: baseline; padding-bottom: 10px; border-bottom: 1px solid var(--a-linea); }
+#anio .anio-fechas div:last-child { border-bottom: 0; padding-bottom: 0; }
+#anio .anio-fechas dt { font: 500 13px/1.4 var(--a-mono); color: var(--a-alba); }
+#anio .anio-fechas dd { margin: 0; font-size: 15.5px; line-height: 1.45; }
+#anio .anio-cita { margin: 0; }
+#anio .anio-cita p { margin: 0; font: italic 400 clamp(20px, 2vw, 24px)/1.3 var(--a-serif); }
+#anio .anio-ficha-pie { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--a-luz-2); }
+#anio .anio-tel { font-family: var(--a-mono); font-weight: 500; color: var(--a-luz); white-space: nowrap; user-select: all; -webkit-user-select: all; }
+#anio .anio-fuente { margin: 18px 0 0; font: 400 12.5px/1.55 var(--a-mono); color: var(--a-luz-2); }
+
+/* ---- tamaños ---- */
+@media (max-width: 760px) {
+  #anio .anio-escena { aspect-ratio: auto; max-height: none; min-height: 660px; }
+  #anio .anio-escena::before { background: linear-gradient(0deg, rgb(8 13 10 / .9) 0%, rgb(8 13 10 / .55) 48%, rgb(8 13 10 / .25)); }
+  #anio .anio-carta { max-width: none; left: 18px; right: 18px; bottom: 18px; gap: 10px; }
+  #anio .anio-mes { font-size: clamp(42px, 13cqi, 64px); }
+  #anio .anio-reloj { --b: 38px; right: 50%; top: 16px; transform: translateX(50%); width: min(78cqi, 290px); }
+  #anio .anio-hora { font-size: 12px; }
+}
+@media (max-width: 520px) {
+  #anio .anio-fechas div { grid-template-columns: 1fr; gap: 2px; }
+}
+@media (max-width: 380px) {
+  #anio .anio-escena { min-height: 680px; }
+  #anio .anio-reloj { --b: 36px; width: min(84cqi, 280px); }
+  #anio .anio-txt { font-size: 14.5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #anio .anio-foto, #anio .anio-hora, #anio .anio-boton { transition: none !important; }
+}
+/* densidad sobria: el año sin lo que cae del cielo */
+html.densidad-sobria #anio .anio-cielo { display: none; }

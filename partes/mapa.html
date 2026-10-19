@@ -1,0 +1,127 @@
+<section id="mapa" class="mapa" aria-labelledby="t-mapa">
+  <div class="mapa-env">
+    <header class="mapa-cab">
+      <p class="mapa-antetitulo">Las rutas de Manolo</p>
+      <h2 id="t-mapa">Dime cuántos días tienes y <em>te dibujo el mapa</em></h2>
+      <p class="mapa-intro">Manolo camina y corre estos montes, y a cada huésped le dibuja a mano su mapa. Esto es un adelanto con las siete rutas circulares que eligió en su blog entre las de la Ribeira Sacra: di cuántos días tienes, cuánto te apetece andar y qué te gusta, y el mapa se dibuja sobre el relieve de la comarca. Luego, llévatelo.</p>
+    </header>
+
+    <div class="mapa-taller">
+      <div class="mapa-hoja-col">
+        <div class="mapa-pliego" id="mapa-pliego">
+          <svg class="mapa-svg" id="mapa-svg" viewBox="0 0 1800 1324" role="img" aria-labelledby="mapa-svg-titulo"><title id="mapa-svg-titulo">Mapa dibujado de tu estancia: las rutas elegidas sobre el relieve de la Ribeira Sacra, con la casa marcada</title></svg>
+          <p class="mapa-carga" id="mapa-carga">Desplegando el papel…</p>
+          <i class="mapa-cinta mapa-cinta--1" aria-hidden="true"></i><i class="mapa-cinta mapa-cinta--2" aria-hidden="true"></i>
+        </div>
+        <figure class="mapa-perfil">
+          <figcaption class="mapa-perfil-cab"><b id="mapa-perfil-tit">Perfil de la ruta</b><span id="mapa-perfil-dato">Elige un plan y aparece aquí</span></figcaption>
+          <div class="mapa-perfil-zona" id="mapa-perfil-zona" tabindex="0" role="slider" aria-label="Recorrer el perfil de altura (flechas a izquierda y derecha)" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="Sin ruta">
+            <svg class="mapa-perfil-svg" id="mapa-perfil-svg" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"></svg>
+          </div>
+          <p class="mapa-perfil-ayuda">Pasa el dedo o el ratón por el perfil: el punto rojo te dice por dónde vas en el mapa.</p>
+        </figure>
+      </div>
+
+      <div class="mapa-mandos">
+        <fieldset class="mapa-grupo">
+          <legend>Días</legend>
+          <div class="mapa-fila" data-grupo="dias">
+            <button type="button" class="mapa-opcion" data-valor="1" aria-pressed="false">1 día</button>
+            <button type="button" class="mapa-opcion" data-valor="2" aria-pressed="true">2 días</button>
+            <button type="button" class="mapa-opcion" data-valor="3" aria-pressed="false">3 días</button>
+          </div>
+        </fieldset>
+        <fieldset class="mapa-grupo">
+          <legend>Cuánto te apetece andar</legend>
+          <div class="mapa-fila" data-grupo="nivel">
+            <button type="button" class="mapa-opcion" data-valor="suave" aria-pressed="false">Suave</button>
+            <button type="button" class="mapa-opcion" data-valor="normal" aria-pressed="true">Normal</button>
+            <button type="button" class="mapa-opcion" data-valor="fuerte" aria-pressed="false">Con ganas</button>
+          </div>
+        </fieldset>
+        <fieldset class="mapa-grupo">
+          <legend>Me apetece</legend>
+          <div class="mapa-fila" data-grupo="gustos">
+            <button type="button" class="mapa-opcion" data-valor="bosque" aria-pressed="false">Bosques de cuento</button>
+            <button type="button" class="mapa-opcion" data-valor="mirador" aria-pressed="true">Miradores del cañón</button>
+            <button type="button" class="mapa-opcion" data-valor="monasterio" aria-pressed="true">Monasterios</button>
+            <button type="button" class="mapa-opcion" data-valor="agua" aria-pressed="false">Agua y cascadas</button>
+            <button type="button" class="mapa-opcion" data-valor="vina" aria-pressed="false">Viñas</button>
+          </div>
+        </fieldset>
+
+        <p class="mapa-resumen" id="mapa-resumen" aria-live="polite"><span class="mapa-total" id="mapa-total"></span><span class="mapa-oculto" id="mapa-dicho"></span></p>
+        <ol class="mapa-plan" id="mapa-plan" aria-label="Tu plan, día a día"></ol>
+
+      </div>
+
+      <div class="mapa-pie">
+        <div class="mapa-acciones">
+          <button type="button" class="mapa-accion" id="mapa-bajar" disabled>Descargar mi mapa (PNG)</button>
+          <button type="button" class="mapa-accion mapa-accion--sec" id="mapa-ver" disabled>Verlo en grande</button>
+        </div>
+        <p class="mapa-fuente">Kilómetros, desnivel y descripciones: Manolo Rolán, en su blog turismoruralvegano.com (21-06-2021). Trazados: © colaboradores de OpenStreetMap, aproximados (alguna variante no está). Relieve y alturas: MDT25 © Instituto Geográfico Nacional (CC BY 4.0). Minutos en coche desde la casa: OSRM, por confirmar. Es un ejemplo: el mapa de verdad te lo dibuja Manolo.</p>
+      </div>
+    </div>
+
+    <details class="mapa-rutas">
+      <summary>Las siete rutas de Manolo y los días sin mochila, en texto</summary>
+      <ol class="mapa-rutas-lista">
+        <li data-ruta="PR-G 4" data-nombre="Camiño Real de San Pedro de Rocas" data-salida="Esgos" data-km="9.2" data-desnivel="319" data-gustos="monasterio bosque">
+          <h3>PR-G 4 · Camiño Real de San Pedro de Rocas</h3>
+          <p>Caminos medievales por bosque autóctono hasta San Pedro de Rocas, el monasterio románico excavado en la montaña. La única que no toca el cañón.</p>
+          <p class="mapa-datos">Sale de Esgos · 9,2 km · +319 m</p>
+        </li>
+        <li data-ruta="PR-G 178" data-nombre="Maquino Largaño" data-salida="Luíntra" data-km="15.3" data-desnivel="533" data-gustos="monasterio mirador bosque">
+          <h3>PR-G 178 · Maquino Largaño</h3>
+          <p>Grandes rocas, un sendero medieval entre robles y castaños hacia San Estevo y el mirador de Penedos do Castro, sobre el cañón y el monasterio.</p>
+          <p class="mapa-datos">Sale de Luíntra · 15,3 km · +533 m</p>
+        </li>
+        <li data-ruta="PR-G 98" data-nombre="Cañón do Sil · Santa Cristina" data-salida="Parada de Sil" data-km="17.6" data-desnivel="842" data-gustos="monasterio mirador agua bosque">
+          <h3>PR-G 98 · Cañón do Sil · Santa Cristina</h3>
+          <p>La clásica del cañón, en dos bucles que se pueden hacer por separado: castaños, aldeas, molinos, cascadas y el monasterio de Santa Cristina.</p>
+          <p class="mapa-datos">Sale de Parada de Sil · 17,6 km · +842 m</p>
+        </li>
+        <li data-ruta="PR-G 177" data-nombre="Cañón do Río Mao" data-salida="Parada de Sil" data-km="17.4" data-desnivel="754" data-gustos="agua mirador">
+          <h3>PR-G 177 · Cañón do Río Mao</h3>
+          <p>El cañón del Mao: un canal de piedra que vuela sobre el cañón, la necrópolis de San Lourenzo y un kilómetro y medio de pasarelas.</p>
+          <p class="mapa-datos">Sale de Parada de Sil · 17,4 km · +754 m</p>
+        </li>
+        <li data-ruta="PR-G 213" data-nombre="Ruta dos Bosques Máxicos" data-salida="Castro Caldelas" data-km="21" data-desnivel="736" data-gustos="bosque agua monasterio">
+          <h3>PR-G 213 · Ruta dos Bosques Máxicos</h3>
+          <p>Bosques de cuento, los monasterios de Camba y San Paio, molinos, el puente de Lumeares y la cascada do Cachón. Sale de la villa del castillo.</p>
+          <p class="mapa-datos">Sale de Castro Caldelas · 21 km · +736 m</p>
+        </li>
+        <li data-ruta="PR-G 237" data-nombre="Penas de Matacás" data-salida="Castro Caldelas" data-km="21" data-desnivel="1023" data-gustos="mirador vina">
+          <h3>PR-G 237 · Penas de Matacás</h3>
+          <p>Viñas de pendientes imposibles en la costa de Alais, el mirador de las Penas de Matacás sobre el Sil y la cueva de uno de los últimos maquis.</p>
+          <p class="mapa-datos">Sale de Castro Caldelas · 21 km (18 sin el embarcadero) · +1.023 m</p>
+        </li>
+        <li data-ruta="PR-G 180" data-nombre="A Cubela" data-salida="Ribas de Sil (Lugo)" data-km="13.39" data-desnivel="721" data-gustos="mirador">
+          <h3>PR-G 180 · A Cubela</h3>
+          <p>El meandro de A Cubela, donde el río casi da la vuelta, junto a una antigua mina romana. La única de la provincia de Lugo.</p>
+          <p class="mapa-datos">Sale de Ribas de Sil (Lugo) · 13,39 km · +721 m</p>
+        </li>
+        <li data-descanso="pueblos" data-nombre="Un día sin mochila: pueblos y monasterios" data-lugares="montederramo:Mosteiro de Montederramo castro_caldelas:Castro Caldelas san_paio:San Paio de Abeleda">
+          <h3>Un día sin mochila: pueblos y monasterios</h3>
+          <p>El mosteiro de Montederramo, el castillo de Castro Caldelas y San Paio de Abeleda, con calma.</p>
+          <p class="mapa-datos">Montederramo · 11 min · Castro Caldelas · 15 min · San Paio de Abeleda · 26 min, en coche</p>
+        </li>
+        <li data-descanso="termas" data-nombre="Un día de termas">
+          <h3>Un día de termas</h3>
+          <p>Pozas de agua caliente al aire libre en Ourense: Chavasqueira, Outariz, As Burgas. Fuera del mapa, a unos 55 minutos.</p>
+          <p class="mapa-datos">Chavasqueira y As Burgas · 55 min, en coche</p>
+        </li>
+      </ol>
+    </details>
+
+    <dialog class="mapa-visor" id="mapa-visor" aria-labelledby="mapa-visor-tit">
+      <h3 class="mapa-visor-tit" id="mapa-visor-tit">Tu mapa</h3>
+      <img class="mapa-visor-img" id="mapa-visor-img" alt="Tu mapa dibujado: las rutas elegidas sobre el relieve, con la leyenda y la casa marcada">
+      <div class="mapa-visor-pie">
+        <a class="mapa-accion" id="mapa-visor-bajar" download="mapa-caserio-da-castineira.png" href="#">Descargar (PNG)</a>
+        <button type="button" class="mapa-accion mapa-accion--sec" id="mapa-visor-cerrar">Cerrar</button>
+      </div>
+    </dialog>
+  </div>
+</section>

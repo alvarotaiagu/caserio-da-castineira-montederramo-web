@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caserío da Castiñeira · Casa rural en Montederramo, Ribeira Sacra</title>
+<meta name="description" content="Caserío de piedra solo en su claro, a 917 metros, en Sas do Monte (Montederramo, Ourense). Cuatro apartamentos y una habitación doble, cocina vegana, estufa de pellets en cada estancia y perros gratis.">
+<meta name="theme-color" content="#080d18">
+<link rel="icon" href="img/marca/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/marca/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/marca/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Caserío da Castiñeira · A 917 metros, una casa en su claro">
+<meta property="og:description" content="Caserío de piedra en Montederramo, Ribeira Sacra. Cuatro apartamentos y una habitación doble, cocina vegana y perros bienvenidos.">
+<meta property="og:image" content="img/og.jpg">
+<script>
+/* Antes de pintar: clases de estado, mando de maqueta y red de seguridad de la cortina */
+(function () {
+  var d = document.documentElement, reduce = false;
+  try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  d.classList.add('js', reduce ? 'sin-movimiento' : 'con-movimiento');
+  // MANDO DE MAQUETA: la densidad solo se aplica si la URL lleva ?revision
+  try { var q = new URLSearchParams(location.search); if (q.has('revision')) { d.classList.add('en-revision'); if (q.get('densidad') === 'sobria') d.classList.add('densidad-sobria'); } } catch (e) {}
+  // fin del MANDO DE MAQUETA
+  // Señal del contrato con el 3D: la ventana empieza a crecer una sola vez
+  window.__castineiraFuera = function () {
+    if (d.classList.contains('cortina-fuera')) return;
+    d.classList.add('cortina-fuera');
+    d.classList.remove('cortina-puesta');
+    document.dispatchEvent(new Event('castineira:cortina-fuera'));
+  };
+  // Si el módulo del 3D no llega a cargar (404, red), se queda la imagen: clase sin-3d
+  window.__castineira3dFallo = function () {
+    ['vuelo', 'claro'].forEach(function (id) { var e = document.getElementById(id); if (e && !e.classList.contains('con-3d')) e.classList.add('sin-3d'); });
+    var c = document.getElementById('claro-carga'); if (c) c.hidden = true;
+  };
+  if (reduce) { window.__castineiraFuera(); return; }
+  d.classList.add('cortina-puesta');
+  // red de seguridad: si main.js no llega, la cortina se retira igual a los 7 s
+  setTimeout(function () { var c = document.getElementById('cortina'); if (c) c.hidden = true; window.__castineiraFuera(); }, 7000);
+})();
+</script>
+<link rel="preload" as="image" type="image/avif" media="(max-aspect-ratio: 1/1)" imagesrcset="img/terreno/poster-vuelo-movil-600.avif 600w, img/terreno/poster-vuelo-movil-900.avif 900w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" media="(min-aspect-ratio: 1.001/1)" imagesrcset="img/terreno/poster-vuelo-1280.avif 1280w, img/terreno/poster-vuelo-1920.avif 1920w" imagesizes="100vw" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,700..900&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Reenie+Beanie&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,700..900&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Reenie+Beanie&display=swap"></noscript>
+<link rel="stylesheet" href="css/estilos.css?v=9fd585ed">
+<link rel="stylesheet" href="css/3d.css?v=489f9f76">
+<link rel="stylesheet" href="css/mapa.css?v=797146ca">
+<link rel="stylesheet" href="css/anio.css?v=590ab323">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Caserío da Castiñeira",
+  "description": "Caserío de piedra reformado en 2008: cuatro apartamentos y una habitación doble, cocina vegana y mascotas gratis.",
+  "telephone": "+34 609 31 42 35",
+  "email": "info@acastineira.com",
+  "address": { "@type": "PostalAddress", "streetAddress": "A Castiñeira, 1, Sas do Monte", "postalCode": "32751", "addressLocality": "Montederramo", "addressRegion": "Ourense", "addressCountry": "ES" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 42.31216, "longitude": -7.44980 },
+  "checkinTime": "15:00", "checkoutTime": "12:00", "petsAllowed": true
+}</script>
+</head>
+<body>
+<a class="saltar" href="#principal">Saltar al contenido</a>
+
+<!-- CORTINA: una ventana de cuatro cristales se enciende en la noche y entramos por un cristal -->
+<div class="cortina" id="cortina" aria-hidden="true">
+  <svg class="cortina-svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <radialGradient id="cortina-halo-g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f0a36a" stop-opacity=".55"/><stop offset=".45" stop-color="#f0a36a" stop-opacity=".16"/><stop offset="1" stop-color="#f0a36a" stop-opacity="0"/></radialGradient>
+      <linearGradient id="cortina-vidrio-g" x1="0" y1="0" x2=".4" y2="1"><stop offset="0" stop-color="#ffcf8a"/><stop offset=".55" stop-color="#ffb765"/><stop offset="1" stop-color="#e98a3c"/></linearGradient>
+    </defs>
+    <g class="cortina-muro" id="cortina-muro">
+      <!-- el muro de noche con los cuatro cristales vacíos (evenodd): por ellos se ve la portada -->
+      <path class="muro" fill-rule="evenodd" d="M-4000 -4000 H4400 V4400 H-4000 Z M172 150 H198 V188 H172 Z M202 150 H228 V188 H202 Z M172 192 H198 V230 H172 Z M202 192 H228 V230 H202 Z"/>
+      <ellipse class="halo" id="cortina-halo" cx="200" cy="190" rx="120" ry="140" fill="url(#cortina-halo-g)"/>
+      <path class="marco" fill-rule="evenodd" d="M167 145 H233 V235 H167 Z M172 150 H198 V188 H172 Z M202 150 H228 V188 H202 Z M172 192 H198 V230 H172 Z M202 192 H228 V230 H202 Z"/>
+      <path class="fantasma" d="M167 145 H233 V235 H167 Z M200 145 V235 M167 190 H233"/>
+      <!-- cada cristal: apagado (oscuro) y encendido encima; el 2 es por el que entramos -->
+      <g class="cristal" data-n="1"><rect class="apagado" x="172" y="150" width="26" height="38"/><rect class="vidrio" x="172" y="150" width="26" height="38" fill="url(#cortina-vidrio-g)"/></g>
+      <g class="cristal" data-n="2" id="cortina-paso"><rect class="apagado" x="202" y="150" width="26" height="38"/><rect class="vidrio" x="202" y="150" width="26" height="38" fill="url(#cortina-vidrio-g)"/></g>
+      <g class="cristal" data-n="3"><rect class="apagado" x="172" y="192" width="26" height="38"/><rect class="vidrio" x="172" y="192" width="26" height="38" fill="url(#cortina-vidrio-g)"/></g>
+      <g class="cristal" data-n="4"><rect class="apagado" x="202" y="192" width="26" height="38"/><rect class="vidrio" x="202" y="192" width="26" height="38" fill="url(#cortina-vidrio-g)"/></g>
+    </g>
+  </svg>
+</div>
+
+<header class="cab" id="cab">
+  <a class="cab-marca" href="#arriba" aria-label="Caserío da Castiñeira, volver al principio">
+    <svg class="cab-ventana" id="cab-ventana" viewBox="0 0 30 38" aria-hidden="true">
+      <rect class="marco" x="1" y="1" width="28" height="36" rx="1"/>
+      <rect class="cristal" data-n="1" x="3.5" y="3.5" width="10.5" height="14.5"/>
+      <rect class="cristal" data-n="2" x="16" y="3.5" width="10.5" height="14.5"/>
+      <rect class="cristal" data-n="3" x="3.5" y="20" width="10.5" height="14.5"/>
+      <rect class="cristal" data-n="4" x="16" y="20" width="10.5" height="14.5"/>
+    </svg>
+    <span class="cab-nombre">Caserío <i>da</i> Castiñeira</span>
+  </a>
+  <nav class="cab-nav" aria-label="Secciones">
+    <a href="#hogar">La casa</a>
+    <a href="#comemos">Cocina</a>
+    <a href="#alojamientos">Alojamientos</a>
+    <a href="#mapa">Rutas</a>
+    <a href="#llegar">Cómo llegar</a>
+  </nav>
+  <a class="btn cab-reservar" href="#reserva">Reservar</a>
+  <button type="button" class="cab-menu" id="menu-btn" aria-expanded="false" aria-controls="menu-movil">Menú</button>
+</header>
+<div class="menu-movil" id="menu-movil" hidden>
+  <nav aria-label="Menú">
+    <a href="#hogar">La casa</a>
+    <a href="#comemos">La cocina</a>
+    <a href="#alojamientos">Alojamientos</a>
+    <a href="#mapa">Rutas</a>
+    <a href="#anio">Un año en la casa</a>
+    <a href="#manolo">Manolo</a>
+    <a href="#claro">El claro</a>
+    <a href="#reserva">Reservar</a>
+    <a href="#llegar">Cómo llegar</a>
+  </nav>
+  <p class="menu-tel">Móvil y WhatsApp <span class="tel-num">609 31 42 35</span></p>
+</div>
+
+<main id="principal">
+
+<!-- PORTADA: el vuelo desde la sierra hasta el tejado (lo pinta el 3D en #vuelo) -->
+<section class="portada" id="arriba" aria-labelledby="t-portada">
+  <div class="vuelo" id="vuelo">
+    <picture>
+      <source type="image/avif" media="(max-aspect-ratio: 1/1)" srcset="img/terreno/poster-vuelo-movil-600.avif 600w, img/terreno/poster-vuelo-movil-900.avif 900w" sizes="100vw">
+      <source type="image/webp" media="(max-aspect-ratio: 1/1)" srcset="img/terreno/poster-vuelo-movil-600.webp 600w, img/terreno/poster-vuelo-movil-900.webp 900w" sizes="100vw">
+      <source media="(max-aspect-ratio: 1/1)" srcset="img/terreno/poster-vuelo-movil-600.jpg 600w, img/terreno/poster-vuelo-movil-900.jpg 900w" sizes="100vw">
+      <source type="image/avif" srcset="img/terreno/poster-vuelo-1280.avif 1280w, img/terreno/poster-vuelo-1920.avif 1920w" sizes="100vw">
+      <source type="image/webp" srcset="img/terreno/poster-vuelo-1280.webp 1280w, img/terreno/poster-vuelo-1920.webp 1920w" sizes="100vw">
+      <img id="vuelo-poster" src="img/terreno/poster-vuelo.jpg" srcset="img/terreno/poster-vuelo-1280.jpg 1280w, img/terreno/poster-vuelo-1920.jpg 1920w" sizes="100vw" alt="La sierra de A Pena da Cruz y sus aerogeneradores vistos desde el aire; a la derecha, la meseta donde está la casa" fetchpriority="high" width="1280" height="720">
+    </picture>
+    <!-- el 3D añade aquí su <canvas> -->
+  </div>
+  <div class="portada-velo" aria-hidden="true"></div>
+  <div class="portada-cuerpo">
+    <div class="portada-txt">
+      <p class="chip" id="ahora-castineira">42,312° N · 7,450° O · 917 m</p>
+      <h1 id="t-portada">A 917 metros, <i>una casa en su claro</i></h1>
+      <p class="portada-entrada">Un caserío de piedra solo en su claro, entre prados y castaños, a los pies de la Serra do Burgo. Cuatro apartamentos y una habitación, cocina vegana y perros bienvenidos. Montederramo, a once minutos; el cañón del Sil, a media hora.</p>
+    </div>
+    <form class="rapida" id="rapida" action="#reserva" aria-label="Reserva rápida">
+      <label class="rapida-campo"><span>Llegada</span><input type="date" id="rapida-llega" name="llegada"></label>
+      <label class="rapida-campo"><span>Salida</span><input type="date" id="rapida-sale" name="salida"></label>
+      <label class="rapida-campo"><span>Personas</span>
+        <select id="rapida-gente" name="personas">
+          <option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="8">8</option><option value="10">10</option><option value="12">12</option><option value="16">16, la casa entera</option>
+        </select>
+      </label>
+      <button type="submit" class="btn">Ver disponibilidad</button>
+    </form>
+  </div>
+  <div class="altimetro" aria-hidden="true">
+    <span class="alt-et">Altitud</span><b id="altimetro-valor">917 m</b>
+    <div class="alt-regla"><i style="--y:13%">Pena da Cruz · 1.289 m</i><i class="es-casa" style="--y:47%">Casa · 917 m</i><i style="--y:86%">Valle · 488 m</i><span class="aguja" id="altimetro-aguja" style="top:47%"></span></div>
+  </div>
+  <button type="button" id="vuelo-pausa" class="vuelo-pausa" hidden>Pausar el vuelo</button>
+  <p class="vuelo-pista" aria-hidden="true"><span class="pista-raton">Arrastra de lado para volar</span><span class="pista-dedo">Desliza de lado para volar</span></p>
+</section>
+
+<!-- CAPÍTULOS «SOMOS…»: la voz de su blog. El fondo de la página toma el color de cada pared -->
+<div class="somos" id="somos">
+
+  <section class="capitulo" id="hogar" data-pared="mostaza" aria-labelledby="t-hogar">
+    <div class="env">
+      <h2 class="palabra" id="t-hogar" data-letras="puerta" aria-label="Somos hogar"><span class="somos-pre" aria-hidden="true">Somos</span><span class="palabra-txt" aria-hidden="true">Hogar</span></h2>
+      <div class="cap-rejilla">
+        <div class="cap-txt">
+          <p class="entrada">La casa familiar se reformó en 2008. Antes la rodeaban un pajar, una leñera y varias cuadras; hoy son cuatro apartamentos y una habitación doble.</p>
+          <p>Es, como dicen ellos, «la única construcción del lugar de A Castiñeira», a los pies de la Serra do Burgo. Todas las estancias tienen salida directa al patio interior, y la zona común es para todos: biblioteca, juegos, wifi, tele y chimenea. Fuera, el jardín, la barbacoa, el aparcamiento y un huerto ecológico.</p>
+          <ul class="cap-datos">
+            <li><b>2008</b><span>reformada</span></li>
+            <li><b>5</b><span>alojamientos al patio</span></li>
+            <li><b>16</b><span>plazas en toda la casa</span></li>
+          </ul>
+        </div>
+        <figure class="cap-foto cap-foto-grande" data-entra>
+          <picture data-foto="puerta"><source type="image/avif" srcset="img/fotos/puerta-480.avif 480w, img/fotos/puerta-800.avif 800w, img/fotos/puerta-1200.avif 1200w, img/fotos/puerta-1280.avif 1280w" sizes="(max-width: 899px) 92vw, 50vw"><source type="image/webp" srcset="img/fotos/puerta-480.webp 480w, img/fotos/puerta-800.webp 800w, img/fotos/puerta-1200.webp 1200w, img/fotos/puerta-1280.webp 1280w" sizes="(max-width: 899px) 92vw, 50vw"><img src="img/fotos/puerta-800.jpg" srcset="img/fotos/puerta-480.jpg 480w, img/fotos/puerta-800.jpg 800w, img/fotos/puerta-1200.jpg 1200w, img/fotos/puerta-1280.jpg 1280w" sizes="(max-width: 899px) 92vw, 50vw" width="800" height="530" alt="Fachada de granito con la puerta de madera roja, hortensias y una escalera de piedra" loading="lazy" decoding="async"></picture>
+          <figcaption>La puerta roja: puertas y contraventanas rojas sobre el granito gris.</figcaption>
+        </figure>
+      </div>
+      <div class="cap-tira">
+        <figure data-entra><picture data-foto="patio"><source type="image/avif" srcset="img/fotos/patio-480.avif 480w, img/fotos/patio-800.avif 800w, img/fotos/patio-1200.avif 1200w, img/fotos/patio-1280.avif 1280w" sizes="(max-width: 699px) 92vw, 31vw"><source type="image/webp" srcset="img/fotos/patio-480.webp 480w, img/fotos/patio-800.webp 800w, img/fotos/patio-1200.webp 1200w, img/fotos/patio-1280.webp 1280w" sizes="(max-width: 699px) 92vw, 31vw"><img src="img/fotos/patio-800.jpg" srcset="img/fotos/patio-480.jpg 480w, img/fotos/patio-800.jpg 800w, img/fotos/patio-1200.jpg 1200w, img/fotos/patio-1280.jpg 1280w" sizes="(max-width: 699px) 92vw, 31vw" width="800" height="533" alt="Patio de hierba entre las casas de piedra, con dos ánforas de barro en el suelo" loading="lazy" decoding="async"></picture><figcaption>El patio interior</figcaption></figure>
+        <figure data-entra><picture data-foto="prado"><source type="image/avif" srcset="img/fotos/prado-480.avif 480w, img/fotos/prado-800.avif 800w, img/fotos/prado-1201.avif 1201w" sizes="(max-width: 699px) 92vw, 31vw"><source type="image/webp" srcset="img/fotos/prado-480.webp 480w, img/fotos/prado-800.webp 800w, img/fotos/prado-1201.webp 1201w" sizes="(max-width: 699px) 92vw, 31vw"><img src="img/fotos/prado-800.jpg" srcset="img/fotos/prado-480.jpg 480w, img/fotos/prado-800.jpg 800w, img/fotos/prado-1201.jpg 1201w" sizes="(max-width: 699px) 92vw, 31vw" width="800" height="600" alt="La casa al fondo de un prado verde en primavera, entre árboles" loading="lazy" decoding="async"></picture><figcaption>El prado, en primavera</figcaption></figure>
+        <figure data-entra><picture data-foto="hamaca"><source type="image/avif" srcset="img/fotos/hamaca-480.avif 480w, img/fotos/hamaca-800.avif 800w, img/fotos/hamaca-1200.avif 1200w" sizes="(max-width: 699px) 92vw, 31vw"><source type="image/webp" srcset="img/fotos/hamaca-480.webp 480w, img/fotos/hamaca-800.webp 800w, img/fotos/hamaca-1200.webp 1200w" sizes="(max-width: 699px) 92vw, 31vw"><img src="img/fotos/hamaca-800.jpg" srcset="img/fotos/hamaca-480.jpg 480w, img/fotos/hamaca-800.jpg 800w, img/fotos/hamaca-1200.jpg 1200w" sizes="(max-width: 699px) 92vw, 31vw" width="800" height="600" alt="Una hamaca colgada entre los árboles, sobre la hierba" loading="lazy" decoding="async"></picture><figcaption>La hamaca del jardín</figcaption></figure>
+      </div>
+
+      <!-- MANDO DE MAQUETA: la tabla solo sale en la versión «Sobria» -->
+      <div class="vistazo" id="vistazo">
+        <h3>La casa, de un vistazo</h3>
+        <table>
+          <tbody>
+            <tr><th scope="row">Reformada</th><td>2008 · antes, casa familiar con pajar, leñera y cuadras</td></tr>
+            <tr><th scope="row">Alojamientos</th><td>4 apartamentos y 1 habitación doble · hasta 16 personas</td></tr>
+            <tr><th scope="row">Altitud</th><td>917 m, a los pies de la Serra do Burgo</td></tr>
+            <tr><th scope="row">Calor</th><td>Estufa de pellets en cada estancia · chimenea en la zona común</td></tr>
+            <tr><th scope="row">Cocina</th><td>Vegana y ecológica · cenas veganas con reserva la víspera</td></tr>
+            <tr><th scope="row">Entrada · salida</th><td>15:00–22:00 · 8:30–12:00</td></tr>
+            <tr><th scope="row">Mascotas</th><td>Gratis</td></tr>
+            <tr><th scope="row">Booking</th><td>9,2 · 130 comentarios · personal 9,8</td></tr>
+            <tr><th scope="row">Registro</th><td>TR-OR-000017</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- fin de la tabla del MANDO DE MAQUETA -->
+    </div>
+  </section>
+
+  <section class="capitulo" id="fuego" data-pared="teja" aria-labelledby="t-fuego">
+    <div class="env">
+      <h2 class="palabra" id="t-fuego" data-letras="fuego" aria-label="Somos fuego"><span class="somos-pre" aria-hidden="true">Somos</span><span class="palabra-txt" aria-hidden="true">Fuego</span></h2>
+      <div class="cap-rejilla es-al-reves">
+        <div class="cap-txt">
+          <p class="entrada">Una estufa de pellets en cada estancia y, en la zona común, la chimenea.</p>
+          <p>La casa está a 917 metros. En invierno nieva y los tejados de piedra se quedan blancos entre los robles; de noche, solo se ven las ventanas encendidas.</p>
+          <blockquote><p>«La casa nos encantó, y con la chimenea se estaba de lujo.»</p><cite>Opinión en Escapada Rural</cite></blockquote>
+        </div>
+        <figure class="cap-foto cap-foto-grande" data-entra>
+          <picture data-foto="noche"><source type="image/avif" srcset="img/fotos/noche-480.avif 480w, img/fotos/noche-800.avif 800w, img/fotos/noche-1200.avif 1200w" sizes="(max-width: 899px) 92vw, 50vw"><source type="image/webp" srcset="img/fotos/noche-480.webp 480w, img/fotos/noche-800.webp 800w, img/fotos/noche-1200.webp 1200w" sizes="(max-width: 899px) 92vw, 50vw"><img src="img/fotos/noche-800.jpg" srcset="img/fotos/noche-480.jpg 480w, img/fotos/noche-800.jpg 800w, img/fotos/noche-1200.jpg 1200w" sizes="(max-width: 899px) 92vw, 50vw" width="800" height="600" alt="La casa de piedra de noche, con una ventana de madera encendida en naranja" loading="lazy" decoding="async"></picture>
+          <figcaption>De noche, la ventana encendida.</figcaption>
+        </figure>
+      </div>
+      <div class="cap-tira">
+        <figure data-entra><picture data-foto="estufa"><source type="image/avif" srcset="img/fotos/estufa-480.avif 480w, img/fotos/estufa-800.avif 800w, img/fotos/estufa-1200.avif 1200w" sizes="(max-width: 699px) 92vw, 31vw"><source type="image/webp" srcset="img/fotos/estufa-480.webp 480w, img/fotos/estufa-800.webp 800w, img/fotos/estufa-1200.webp 1200w" sizes="(max-width: 699px) 92vw, 31vw"><img src="img/fotos/estufa-800.jpg" srcset="img/fotos/estufa-480.jpg 480w, img/fotos/estufa-800.jpg 800w, img/fotos/estufa-1200.jpg 1200w" sizes="(max-width: 699px) 92vw, 31vw" width="800" height="600" alt="Estufa de pellets encendida junto a una cesta de leña, ante una pared amarilla" loading="lazy" decoding="async"></picture><figcaption>La estufa de cada estancia</figcaption></figure>
+        <figure data-entra><picture data-foto="nieve-casa"><source type="image/avif" srcset="img/fotos/nieve-casa-480.avif 480w, img/fotos/nieve-casa-800.avif 800w, img/fotos/nieve-casa-1200.avif 1200w, img/fotos/nieve-casa-1280.avif 1280w" sizes="(max-width: 699px) 92vw, 31vw"><source type="image/webp" srcset="img/fotos/nieve-casa-480.webp 480w, img/fotos/nieve-casa-800.webp 800w, img/fotos/nieve-casa-1200.webp 1200w, img/fotos/nieve-casa-1280.webp 1280w" sizes="(max-width: 699px) 92vw, 31vw"><img src="img/fotos/nieve-casa-800.jpg" srcset="img/fotos/nieve-casa-480.jpg 480w, img/fotos/nieve-casa-800.jpg 800w, img/fotos/nieve-casa-1200.jpg 1200w, img/fotos/nieve-casa-1280.jpg 1280w" sizes="(max-width: 699px) 92vw, 31vw" width="800" height="461" alt="La casa y sus anexos de piedra sobre la ladera cubierta de nieve" loading="lazy" decoding="async"></picture><figcaption>En invierno, nieve</figcaption></figure>
+        <figure data-entra><picture data-foto="nieve"><source type="image/avif" srcset="img/fotos/nieve-480.avif 480w, img/fotos/nieve-800.avif 800w, img/fotos/nieve-1200.avif 1200w" sizes="(max-width: 699px) 92vw, 31vw"><source type="image/webp" srcset="img/fotos/nieve-480.webp 480w, img/fotos/nieve-800.webp 800w, img/fotos/nieve-1200.webp 1200w" sizes="(max-width: 699px) 92vw, 31vw"><img src="img/fotos/nieve-800.jpg" srcset="img/fotos/nieve-480.jpg 480w, img/fotos/nieve-800.jpg 800w, img/fotos/nieve-1200.jpg 1200w" sizes="(max-width: 699px) 92vw, 31vw" width="800" height="600" alt="Los tejados de la casa nevados, vistos entre ramas de roble cubiertas de nieve" loading="lazy" decoding="async"></picture><figcaption>Los robles, blancos</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="capitulo" id="comemos" data-pared="verde" aria-labelledby="t-comemos">
+    <div class="env">
+      <h2 class="palabra es-larga" id="t-comemos" data-letras="desayuno" aria-label="Somos lo que comemos"><span class="somos-pre" aria-hidden="true">Somos</span><span class="palabra-txt" aria-hidden="true">Lo que comemos</span></h2>
+      <div class="cap-rejilla">
+        <div class="cap-txt">
+          <p class="entrada">Su cocina es, en sus palabras, «ecológica, vegana y terapéutica». En Booking la casa se presenta como 100 % vegetariana.</p>
+          <ul class="cap-lista">
+            <li><b>Cenas 100 % veganas.</b> Se reservan con un día de antelación.</li>
+            <li><b>Desayuno vegano o sin gluten.</b> También para llevar, si sales temprano de ruta.</li>
+            <li><b>Soupings y batidos verdes.</b> Sopas, cremas y licuados de la casa.</li>
+          </ul>
+          <blockquote><p>«El desayuno vegano riquísimo, es un sitio perfecto para cargar las pilas.»</p><cite>Opinión en Escapada Rural</cite></blockquote>
+        </div>
+        <figure class="cap-foto cap-foto-grande" data-entra>
+          <picture data-foto="desayuno"><source type="image/avif" srcset="img/fotos/desayuno-480.avif 480w, img/fotos/desayuno-800.avif 800w, img/fotos/desayuno-1080.avif 1080w" sizes="(max-width: 899px) 92vw, 50vw"><source type="image/webp" srcset="img/fotos/desayuno-480.webp 480w, img/fotos/desayuno-800.webp 800w, img/fotos/desayuno-1080.webp 1080w" sizes="(max-width: 899px) 92vw, 50vw"><img src="img/fotos/desayuno-800.jpg" srcset="img/fotos/desayuno-480.jpg 480w, img/fotos/desayuno-800.jpg 800w, img/fotos/desayuno-1080.jpg 1080w" sizes="(max-width: 899px) 92vw, 50vw" width="800" height="370" alt="Desayuno sobre una mesa de madera: tazas de colores, batidos verdes, dulces y una tetera" loading="lazy" decoding="async"></picture>
+          <figcaption>El desayuno, con tazas de colores.</figcaption>
+        </figure>
+      </div>
+      <div class="cap-tira">
+        <figure data-entra><picture data-foto="sopa"><source type="image/avif" srcset="img/fotos/sopa-480.avif 480w, img/fotos/sopa-800.avif 800w, img/fotos/sopa-1080.avif 1080w" sizes="(max-width: 699px) 92vw, 31vw"><source type="image/webp" srcset="img/fotos/sopa-480.webp 480w, img/fotos/sopa-800.webp 800w, img/fotos/sopa-1080.webp 1080w" sizes="(max-width: 699px) 92vw, 31vw"><img src="img/fotos/sopa-800.jpg" srcset="img/fotos/sopa-480.jpg 480w, img/fotos/sopa-800.jpg 800w, img/fotos/sopa-1080.jpg 1080w" sizes="(max-width: 699px) 92vw, 31vw" width="800" height="370" alt="Un plato de crema de verduras de color naranja sobre la mesa" loading="lazy" decoding="async"></picture><figcaption>Una de sus sopas</figcaption></figure>
+        <figure data-entra><picture data-foto="cuencos"><source type="image/avif" srcset="img/fotos/cuencos-480.avif 480w, img/fotos/cuencos-800.avif 800w, img/fotos/cuencos-1200.avif 1200w" sizes="(max-width: 699px) 92vw, 31vw"><source type="image/webp" srcset="img/fotos/cuencos-480.webp 480w, img/fotos/cuencos-800.webp 800w, img/fotos/cuencos-1200.webp 1200w" sizes="(max-width: 699px) 92vw, 31vw"><img src="img/fotos/cuencos-800.jpg" srcset="img/fotos/cuencos-480.jpg 480w, img/fotos/cuencos-800.jpg 800w, img/fotos/cuencos-1200.jpg 1200w" sizes="(max-width: 699px) 92vw, 31vw" width="800" height="600" alt="Mesa puesta con cuencos de cerámica de colores y cucharas de madera" loading="lazy" decoding="async"></picture><figcaption>La mesa puesta</figcaption></figure>
+        <div class="detox" data-entra>
+          <p class="detox-et">Próximamente</p>
+          <h3>Programas detox</h3>
+          <p>Días de batidos verdes, o de sopas, caldos y purés, con alojamiento y salidas guiadas.</p>
+          <dl>
+            <div><dt>1 persona</dt><dd>100 €/día · con yoga, 130 €</dd></div>
+            <div><dt>2 personas</dt><dd>180 €/día · con yoga, 215 €</dd></div>
+          </dl>
+          <p class="detox-nota">Precios de su blog, sin fecha: el programa aún no ha empezado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- LOS CINCO ALOJAMIENTOS -->
+<section class="alojamientos" id="alojamientos" aria-labelledby="t-aloj">
+  <div class="env">
+    <header class="sec-cab">
+      <p class="eyebrow">Dormir</p>
+      <h2 id="t-aloj">Cinco puertas <i>al mismo patio</i></h2>
+      <p class="entrada">Cuatro apartamentos y una habitación doble. Todos con su estufa de pellets y salida directa al patio interior. Se reservan por separado o, para un grupo, la casa entera.</p>
+    </header>
+
+    <ol class="fichas" id="fichas">
+      <li class="ficha" data-entra>
+        <p class="ficha-num" aria-hidden="true">01</p>
+        <div class="ficha-cuerpo">
+          <h3>Apartamento Deluxe</h3>
+          <p>Dos plantas. Abajo, la cocina, el baño y el salón con chimenea; arriba, dos habitaciones, una de matrimonio y otra con dos camas.</p>
+        </div>
+        <p class="ficha-plazas"><b>6</b> personas</p>
+        <p class="ficha-precio">desde <b>18 €</b> <span>por persona y noche*</span></p>
+        <button type="button" class="btn-sec" data-ver-aloj="deluxe">Ver fechas</button>
+      </li>
+      <li class="ficha" data-entra>
+        <p class="ficha-num" aria-hidden="true">02</p>
+        <div class="ficha-cuerpo">
+          <h3>Apartamento de 1 habitación</h3>
+          <p>Todo en una sola estancia: cocina, salón con sofá cama y chimenea, la cama y el baño. Y una buhardilla con cama de matrimonio.</p>
+        </div>
+        <p class="ficha-plazas"><b>3</b> personas</p>
+        <p class="ficha-precio">desde <b>22 €</b> <span>por persona y noche*</span></p>
+        <button type="button" class="btn-sec" data-ver-aloj="buhardilla">Ver fechas</button>
+      </li>
+      <li class="ficha" data-entra>
+        <p class="ficha-num" aria-hidden="true">03</p>
+        <div class="ficha-cuerpo">
+          <h3>Apartamento de 2 habitaciones</h3>
+          <p>Se entra por el patio común. Dos habitaciones con cama de matrimonio, el baño, la cocina y un salón con chimenea.</p>
+        </div>
+        <p class="ficha-plazas"><b>4</b> personas</p>
+        <p class="ficha-precio">desde <b>20 €</b> <span>por persona y noche*</span></p>
+        <button type="button" class="btn-sec" data-ver-aloj="patio">Ver fechas</button>
+      </li>
+      <li class="ficha" data-entra>
+        <p class="ficha-num" aria-hidden="true">04</p>
+        <div class="ficha-cuerpo">
+          <h3>Apartamento de 2 habitaciones y 2 plantas</h3>
+          <p>Abajo, el baño, la cocina-comedor con chimenea y una habitación de matrimonio; arriba, otra habitación de matrimonio y una sala de estar.</p>
+        </div>
+        <p class="ficha-plazas"><b>6</b> personas</p>
+        <p class="ficha-precio">desde <b>17 €</b> <span>por persona y noche*</span></p>
+        <button type="button" class="btn-sec" data-ver-aloj="dosplantas">Ver fechas</button>
+      </li>
+      <li class="ficha" data-entra>
+        <p class="ficha-num" aria-hidden="true">05</p>
+        <div class="ficha-cuerpo">
+          <h3>Habitación doble</h3>
+          <p>En lo que era la casa familiar: cama de matrimonio, una pequeña sala de estar, otra cama a la que se sube por una escalera, baño, nevera y microondas.</p>
+        </div>
+        <p class="ficha-plazas"><b>3</b> personas</p>
+        <p class="ficha-precio">desde <b>18 €</b> <span>por persona y noche*</span></p>
+        <button type="button" class="btn-sec" data-ver-aloj="doble">Ver fechas</button>
+      </li>
+    </ol>
+    <p class="nota-precio">* Precios «desde» por persona y noche publicados en casasrurales.net, sin fecha: sirven de referencia y se confirman al reservar.</p>
+  </div>
+
+  <div class="galeria" aria-labelledby="t-galeria">
+    <div class="env galeria-cab">
+      <h3 id="t-galeria">Piedra, madera y paredes de colores</h3>
+      <p>Así son por dentro los cinco. Desliza para verlos.</p>
+      <div class="galeria-mandos">
+        <button type="button" class="redondo" id="gal-ant" aria-label="Fotos anteriores">‹</button>
+        <span class="galeria-cuenta" id="gal-cuenta" aria-live="polite">1 / 15</span>
+        <button type="button" class="redondo" id="gal-sig" aria-label="Fotos siguientes">›</button>
+      </div>
+    </div>
+    <ul class="carril" id="carril" tabindex="0" aria-label="Fotos de los alojamientos">
+      <li><picture data-foto="hab-01"><source type="image/avif" srcset="img/fotos/hab-01-480.avif 480w, img/fotos/hab-01-800.avif 800w, img/fotos/hab-01-1200.avif 1200w, img/fotos/hab-01-1280.avif 1280w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-01-480.webp 480w, img/fotos/hab-01-800.webp 800w, img/fotos/hab-01-1200.webp 1200w, img/fotos/hab-01-1280.webp 1280w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-01-800.jpg" srcset="img/fotos/hab-01-480.jpg 480w, img/fotos/hab-01-800.jpg 800w, img/fotos/hab-01-1200.jpg 1200w, img/fotos/hab-01-1280.jpg 1280w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="508" alt="Cama de matrimonio con colcha verde ante una pared de piedra, y dos butacas blancas al fondo" loading="lazy" decoding="async"></picture></li>
+      <li><picture data-foto="hab-02"><source type="image/avif" srcset="img/fotos/hab-02-480.avif 480w, img/fotos/hab-02-800.avif 800w, img/fotos/hab-02-1200.avif 1200w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-02-480.webp 480w, img/fotos/hab-02-800.webp 800w, img/fotos/hab-02-1200.webp 1200w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-02-800.jpg" srcset="img/fotos/hab-02-480.jpg 480w, img/fotos/hab-02-800.jpg 800w, img/fotos/hab-02-1200.jpg 1200w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="600" alt="Cama con colcha roja bajo un cuadro, entre paredes de piedra encalada" loading="lazy" decoding="async"></picture></li>
+      <li><picture data-foto="hab-03"><source type="image/avif" srcset="img/fotos/hab-03-480.avif 480w, img/fotos/hab-03-800.avif 800w, img/fotos/hab-03-1200.avif 1200w, img/fotos/hab-03-1280.avif 1280w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-03-480.webp 480w, img/fotos/hab-03-800.webp 800w, img/fotos/hab-03-1200.webp 1200w, img/fotos/hab-03-1280.webp 1280w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-03-800.jpg" srcset="img/fotos/hab-03-480.jpg 480w, img/fotos/hab-03-800.jpg 800w, img/fotos/hab-03-1200.jpg 1200w, img/fotos/hab-03-1280.jpg 1280w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="541" alt="Estancia con paredes amarillas, cocina pequeña, mesa y un altillo de madera" loading="lazy" decoding="async"></picture></li>
+      <li><picture data-foto="hab-04"><source type="image/avif" srcset="img/fotos/hab-04-480.avif 480w, img/fotos/hab-04-800.avif 800w, img/fotos/hab-04-1005.avif 1005w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-04-480.webp 480w, img/fotos/hab-04-800.webp 800w, img/fotos/hab-04-1005.webp 1005w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-04-800.jpg" srcset="img/fotos/hab-04-480.jpg 480w, img/fotos/hab-04-800.jpg 800w, img/fotos/hab-04-1005.jpg 1005w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="716" alt="Cama con colcha naranja de lunares sobre una tarima, ante una pared de piedra" loading="lazy" decoding="async"></picture></li>
+      <li><picture data-foto="hab-05"><source type="image/avif" srcset="img/fotos/hab-05-480.avif 480w, img/fotos/hab-05-800.avif 800w, img/fotos/hab-05-1200.avif 1200w, img/fotos/hab-05-1280.avif 1280w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-05-480.webp 480w, img/fotos/hab-05-800.webp 800w, img/fotos/hab-05-1200.webp 1200w, img/fotos/hab-05-1280.webp 1280w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-05-800.jpg" srcset="img/fotos/hab-05-480.jpg 480w, img/fotos/hab-05-800.jpg 800w, img/fotos/hab-05-1200.jpg 1200w, img/fotos/hab-05-1280.jpg 1280w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="493" alt="Cama con colcha naranja y una mesita redonda junto a la pared de piedra" loading="lazy" decoding="async"></picture></li>
+      <li><picture data-foto="hab-06"><source type="image/avif" srcset="img/fotos/hab-06-480.avif 480w, img/fotos/hab-06-800.avif 800w, img/fotos/hab-06-1200.avif 1200w, img/fotos/hab-06-1280.avif 1280w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-06-480.webp 480w, img/fotos/hab-06-800.webp 800w, img/fotos/hab-06-1200.webp 1200w, img/fotos/hab-06-1280.webp 1280w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-06-800.jpg" srcset="img/fotos/hab-06-480.jpg 480w, img/fotos/hab-06-800.jpg 800w, img/fotos/hab-06-1200.jpg 1200w, img/fotos/hab-06-1280.jpg 1280w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="533" alt="Cama de matrimonio con colcha de rayas de colores bajo las vigas de madera" loading="lazy" decoding="async"></picture></li>
+      <li><picture data-foto="hab-07"><source type="image/avif" srcset="img/fotos/hab-07-480.avif 480w, img/fotos/hab-07-800.avif 800w, img/fotos/hab-07-1200.avif 1200w, img/fotos/hab-07-1280.avif 1280w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-07-480.webp 480w, img/fotos/hab-07-800.webp 800w, img/fotos/hab-07-1200.webp 1200w, img/fotos/hab-07-1280.webp 1280w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-07-800.jpg" srcset="img/fotos/hab-07-480.jpg 480w, img/fotos/hab-07-800.jpg 800w, img/fotos/hab-07-1200.jpg 1200w, img/fotos/hab-07-1280.jpg 1280w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="533" alt="Salón con estufa, sofá morado y una mesa con tazas azules, bajo vigas de madera" loading="lazy" decoding="async"></picture></li>
+      <li><picture data-foto="hab-08"><source type="image/avif" srcset="img/fotos/hab-08-480.avif 480w, img/fotos/hab-08-800.avif 800w, img/fotos/hab-08-1200.avif 1200w, img/fotos/hab-08-1280.avif 1280w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-08-480.webp 480w, img/fotos/hab-08-800.webp 800w, img/fotos/hab-08-1200.webp 1200w, img/fotos/hab-08-1280.webp 1280w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-08-800.jpg" srcset="img/fotos/hab-08-480.jpg 480w, img/fotos/hab-08-800.jpg 800w, img/fotos/hab-08-1200.jpg 1200w, img/fotos/hab-08-1280.jpg 1280w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="533" alt="Salón con sofás morados, mesa larga y un ventanal" loading="lazy" decoding="async"></picture></li>
+      <li><picture data-foto="hab-09"><source type="image/avif" srcset="img/fotos/hab-09-480.avif 480w, img/fotos/hab-09-800.avif 800w, img/fotos/hab-09-1200.avif 1200w, img/fotos/hab-09-1280.avif 1280w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-09-480.webp 480w, img/fotos/hab-09-800.webp 800w, img/fotos/hab-09-1200.webp 1200w, img/fotos/hab-09-1280.webp 1280w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-09-800.jpg" srcset="img/fotos/hab-09-480.jpg 480w, img/fotos/hab-09-800.jpg 800w, img/fotos/hab-09-1200.jpg 1200w, img/fotos/hab-09-1280.jpg 1280w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="533" alt="Cama con colcha rosa y lámparas de colores, con la pared pintada de verde" loading="lazy" decoding="async"></picture></li>
+      <li><picture data-foto="hab-10"><source type="image/avif" srcset="img/fotos/hab-10-480.avif 480w, img/fotos/hab-10-800.avif 800w, img/fotos/hab-10-1200.avif 1200w, img/fotos/hab-10-1280.avif 1280w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-10-480.webp 480w, img/fotos/hab-10-800.webp 800w, img/fotos/hab-10-1200.webp 1200w, img/fotos/hab-10-1280.webp 1280w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-10-800.jpg" srcset="img/fotos/hab-10-480.jpg 480w, img/fotos/hab-10-800.jpg 800w, img/fotos/hab-10-1200.jpg 1200w, img/fotos/hab-10-1280.jpg 1280w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="533" alt="Cama de rayas de colores con cortinas rosas y un cuadro de estrellas" loading="lazy" decoding="async"></picture></li>
+      <li><picture data-foto="hab-11"><source type="image/avif" srcset="img/fotos/hab-11-480.avif 480w, img/fotos/hab-11-800.avif 800w, img/fotos/hab-11-1200.avif 1200w, img/fotos/hab-11-1280.avif 1280w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-11-480.webp 480w, img/fotos/hab-11-800.webp 800w, img/fotos/hab-11-1200.webp 1200w, img/fotos/hab-11-1280.webp 1280w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-11-800.jpg" srcset="img/fotos/hab-11-480.jpg 480w, img/fotos/hab-11-800.jpg 800w, img/fotos/hab-11-1200.jpg 1200w, img/fotos/hab-11-1280.jpg 1280w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="533" alt="Estancia abuhardillada con cama de rayas, paredes amarillas y estufa" loading="lazy" decoding="async"></picture></li>
+      <li><picture data-foto="hab-12"><source type="image/avif" srcset="img/fotos/hab-12-480.avif 480w, img/fotos/hab-12-800.avif 800w, img/fotos/hab-12-1200.avif 1200w, img/fotos/hab-12-1280.avif 1280w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-12-480.webp 480w, img/fotos/hab-12-800.webp 800w, img/fotos/hab-12-1200.webp 1200w, img/fotos/hab-12-1280.webp 1280w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-12-800.jpg" srcset="img/fotos/hab-12-480.jpg 480w, img/fotos/hab-12-800.jpg 800w, img/fotos/hab-12-1200.jpg 1200w, img/fotos/hab-12-1280.jpg 1280w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="533" alt="Habitación de paredes amarillas con cama de rayas y techo de madera" loading="lazy" decoding="async"></picture></li>
+      <li><picture data-foto="hab-13"><source type="image/avif" srcset="img/fotos/hab-13-480.avif 480w, img/fotos/hab-13-800.avif 800w, img/fotos/hab-13-1200.avif 1200w, img/fotos/hab-13-1280.avif 1280w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-13-480.webp 480w, img/fotos/hab-13-800.webp 800w, img/fotos/hab-13-1200.webp 1200w, img/fotos/hab-13-1280.webp 1280w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-13-800.jpg" srcset="img/fotos/hab-13-480.jpg 480w, img/fotos/hab-13-800.jpg 800w, img/fotos/hab-13-1200.jpg 1200w, img/fotos/hab-13-1280.jpg 1280w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="533" alt="Dos camas de rayas junto a la ventana, en una habitación de paredes amarillas" loading="lazy" decoding="async"></picture></li>
+      <li><picture data-foto="hab-14"><source type="image/avif" srcset="img/fotos/hab-14-480.avif 480w, img/fotos/hab-14-800.avif 800w, img/fotos/hab-14-1200.avif 1200w, img/fotos/hab-14-1280.avif 1280w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-14-480.webp 480w, img/fotos/hab-14-800.webp 800w, img/fotos/hab-14-1200.webp 1200w, img/fotos/hab-14-1280.webp 1280w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-14-800.jpg" srcset="img/fotos/hab-14-480.jpg 480w, img/fotos/hab-14-800.jpg 800w, img/fotos/hab-14-1200.jpg 1200w, img/fotos/hab-14-1280.jpg 1280w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="533" alt="Cama con colcha blanca y roja de dibujos, en una estancia de piedra" loading="lazy" decoding="async"></picture></li>
+      <li><picture data-foto="hab-15"><source type="image/avif" srcset="img/fotos/hab-15-480.avif 480w, img/fotos/hab-15-800.avif 800w, img/fotos/hab-15-1200.avif 1200w, img/fotos/hab-15-1280.avif 1280w" sizes="(max-width: 699px) 80vw, 420px"><source type="image/webp" srcset="img/fotos/hab-15-480.webp 480w, img/fotos/hab-15-800.webp 800w, img/fotos/hab-15-1200.webp 1200w, img/fotos/hab-15-1280.webp 1280w" sizes="(max-width: 699px) 80vw, 420px"><img src="img/fotos/hab-15-800.jpg" srcset="img/fotos/hab-15-480.jpg 480w, img/fotos/hab-15-800.jpg 800w, img/fotos/hab-15-1200.jpg 1200w, img/fotos/hab-15-1280.jpg 1280w" sizes="(max-width: 699px) 80vw, 420px" width="800" height="533" alt="Cama de matrimonio, mesa redonda y estufa en una estancia de piedra con altillo" loading="lazy" decoding="async"></picture></li>
+    </ul>
+  </div>
+
+  <div class="env">
+    <div class="saber">
+      <h3>Lo que hay que saber</h3>
+      <dl>
+        <div><dt>Entrada</dt><dd>De 15:00 a 22:00.</dd></div>
+        <div><dt>Salida</dt><dd>De 8:30 a 12:00.</dd></div>
+        <div><dt>Con niños</dt><dd>Cuna gratis. Cama supletoria, 12 € por noche.</dd></div>
+        <div><dt>Mascotas</dt><dd>Gratis. «Nuestros huéspedes no humanos son también familia».</dd></div>
+        <div><dt>Descanso</dt><dd>Sin fiestas ni despedidas. Silencio de 0:00 a 10:00. No se fuma.</dd></div>
+        <div><dt>Pago</dt><dd>En la casa. Booking indica solo efectivo.</dd></div>
+      </dl>
+      <a class="btn" href="#reserva">Ver los días libres</a>
+    </div>
+  </div>
+</section>
+
+<!-- PARTE «Dibuja mi mapa» (agente de Secciones: partes/mapa.html) -->
+<section id="mapa" class="mapa" aria-labelledby="t-mapa">
+  <div class="mapa-env">
+    <header class="mapa-cab">
+      <p class="mapa-antetitulo">Las rutas de Manolo</p>
+      <h2 id="t-mapa">Dime cuántos días tienes y <em>te dibujo el mapa</em></h2>
+      <p class="mapa-intro">Manolo camina y corre estos montes, y a cada huésped le dibuja a mano su mapa. Esto es un adelanto con las siete rutas circulares que eligió en su blog entre las de la Ribeira Sacra: di cuántos días tienes, cuánto te apetece andar y qué te gusta, y el mapa se dibuja sobre el relieve de la comarca. Luego, llévatelo.</p>
+    </header>
+
+    <div class="mapa-taller">
+      <div class="mapa-hoja-col">
+        <div class="mapa-pliego" id="mapa-pliego">
+          <svg class="mapa-svg" id="mapa-svg" viewBox="0 0 1800 1324" role="img" aria-labelledby="mapa-svg-titulo"><title id="mapa-svg-titulo">Mapa dibujado de tu estancia: las rutas elegidas sobre el relieve de la Ribeira Sacra, con la casa marcada</title></svg>
+          <p class="mapa-carga" id="mapa-carga">Desplegando el papel…</p>
+          <i class="mapa-cinta mapa-cinta--1" aria-hidden="true"></i><i class="mapa-cinta mapa-cinta--2" aria-hidden="true"></i>
+        </div>
+        <figure class="mapa-perfil">
+          <figcaption class="mapa-perfil-cab"><b id="mapa-perfil-tit">Perfil de la ruta</b><span id="mapa-perfil-dato">Elige un plan y aparece aquí</span></figcaption>
+          <div class="mapa-perfil-zona" id="mapa-perfil-zona" tabindex="0" role="slider" aria-label="Recorrer el perfil de altura (flechas a izquierda y derecha)" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="Sin ruta">
+            <svg class="mapa-perfil-svg" id="mapa-perfil-svg" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"></svg>
+          </div>
+          <p class="mapa-perfil-ayuda">Pasa el dedo o el ratón por el perfil: el punto rojo te dice por dónde vas en el mapa.</p>
+        </figure>
+      </div>
+
+      <div class="mapa-mandos">
+        <fieldset class="mapa-grupo">
+          <legend>Días</legend>
+          <div class="mapa-fila" data-grupo="dias">
+            <button type="button" class="mapa-opcion" data-valor="1" aria-pressed="false">1 día</button>
+            <button type="button" class="mapa-opcion" data-valor="2" aria-pressed="true">2 días</button>
+            <button type="button" class="mapa-opcion" data-valor="3" aria-pressed="false">3 días</button>
+          </div>
+        </fieldset>
+        <fieldset class="mapa-grupo">
+          <legend>Cuánto te apetece andar</legend>
+          <div class="mapa-fila" data-grupo="nivel">
+            <button type="button" class="mapa-opcion" data-valor="suave" aria-pressed="false">Suave</button>
+            <button type="button" class="mapa-opcion" data-valor="normal" aria-pressed="true">Normal</button>
+            <button type="button" class="mapa-opcion" data-valor="fuerte" aria-pressed="false">Con ganas</button>
+          </div>
+        </fieldset>
+        <fieldset class="mapa-grupo">
+          <legend>Me apetece</legend>
+          <div class="mapa-fila" data-grupo="gustos">
+            <button type="button" class="mapa-opcion" data-valor="bosque" aria-pressed="false">Bosques de cuento</button>
+            <button type="button" class="mapa-opcion" data-valor="mirador" aria-pressed="true">Miradores del cañón</button>
+            <button type="button" class="mapa-opcion" data-valor="monasterio" aria-pressed="true">Monasterios</button>
+            <button type="button" class="mapa-opcion" data-valor="agua" aria-pressed="false">Agua y cascadas</button>
+            <button type="button" class="mapa-opcion" data-valor="vina" aria-pressed="false">Viñas</button>
+          </div>
+        </fieldset>
+
+        <p class="mapa-resumen" id="mapa-resumen" aria-live="polite"><span class="mapa-total" id="mapa-total"></span><span class="mapa-oculto" id="mapa-dicho"></span></p>
+        <ol class="mapa-plan" id="mapa-plan" aria-label="Tu plan, día a día"></ol>
+
+      </div>
+
+      <div class="mapa-pie">
+        <div class="mapa-acciones">
+          <button type="button" class="mapa-accion" id="mapa-bajar" disabled>Descargar mi mapa (PNG)</button>
+          <button type="button" class="mapa-accion mapa-accion--sec" id="mapa-ver" disabled>Verlo en grande</button>
+        </div>
+        <p class="mapa-fuente">Kilómetros, desnivel y descripciones: Manolo Rolán, en su blog turismoruralvegano.com (21-06-2021). Trazados: © colaboradores de OpenStreetMap, aproximados (alguna variante no está). Relieve y alturas: MDT25 © Instituto Geográfico Nacional (CC BY 4.0). Minutos en coche desde la casa: OSRM, por confirmar. Es un ejemplo: el mapa de verdad te lo dibuja Manolo.</p>
+      </div>
+    </div>
+
+    <details class="mapa-rutas">
+      <summary>Las siete rutas de Manolo y los días sin mochila, en texto</summary>
+      <ol class="mapa-rutas-lista">
+        <li data-ruta="PR-G 4" data-nombre="Camiño Real de San Pedro de Rocas" data-salida="Esgos" data-km="9.2" data-desnivel="319" data-gustos="monasterio bosque">
+          <h3>PR-G 4 · Camiño Real de San Pedro de Rocas</h3>
+          <p>Caminos medievales por bosque autóctono hasta San Pedro de Rocas, el monasterio románico excavado en la montaña. La única que no toca el cañón.</p>
+          <p class="mapa-datos">Sale de Esgos · 9,2 km · +319 m</p>
+        </li>
+        <li data-ruta="PR-G 178" data-nombre="Maquino Largaño" data-salida="Luíntra" data-km="15.3" data-desnivel="533" data-gustos="monasterio mirador bosque">
+          <h3>PR-G 178 · Maquino Largaño</h3>
+          <p>Grandes rocas, un sendero medieval entre robles y castaños hacia San Estevo y el mirador de Penedos do Castro, sobre el cañón y el monasterio.</p>
+          <p class="mapa-datos">Sale de Luíntra · 15,3 km · +533 m</p>
+        </li>
+        <li data-ruta="PR-G 98" data-nombre="Cañón do Sil · Santa Cristina" data-salida="Parada de Sil" data-km="17.6" data-desnivel="842" data-gustos="monasterio mirador agua bosque">
+          <h3>PR-G 98 · Cañón do Sil · Santa Cristina</h3>
+          <p>La clásica del cañón, en dos bucles que se pueden hacer por separado: castaños, aldeas, molinos, cascadas y el monasterio de Santa Cristina.</p>
+          <p class="mapa-datos">Sale de Parada de Sil · 17,6 km · +842 m</p>
+        </li>
+        <li data-ruta="PR-G 177" data-nombre="Cañón do Río Mao" data-salida="Parada de Sil" data-km="17.4" data-desnivel="754" data-gustos="agua mirador">
+          <h3>PR-G 177 · Cañón do Río Mao</h3>
+          <p>El cañón del Mao: un canal de piedra que vuela sobre el cañón, la necrópolis de San Lourenzo y un kilómetro y medio de pasarelas.</p>
+          <p class="mapa-datos">Sale de Parada de Sil · 17,4 km · +754 m</p>
+        </li>
+        <li data-ruta="PR-G 213" data-nombre="Ruta dos Bosques Máxicos" data-salida="Castro Caldelas" data-km="21" data-desnivel="736" data-gustos="bosque agua monasterio">
+          <h3>PR-G 213 · Ruta dos Bosques Máxicos</h3>
+          <p>Bosques de cuento, los monasterios de Camba y San Paio, molinos, el puente de Lumeares y la cascada do Cachón. Sale de la villa del castillo.</p>
+          <p class="mapa-datos">Sale de Castro Caldelas · 21 km · +736 m</p>
+        </li>
+        <li data-ruta="PR-G 237" data-nombre="Penas de Matacás" data-salida="Castro Caldelas" data-km="21" data-desnivel="1023" data-gustos="mirador vina">
+          <h3>PR-G 237 · Penas de Matacás</h3>
+          <p>Viñas de pendientes imposibles en la costa de Alais, el mirador de las Penas de Matacás sobre el Sil y la cueva de uno de los últimos maquis.</p>
+          <p class="mapa-datos">Sale de Castro Caldelas · 21 km (18 sin el embarcadero) · +1.023 m</p>
+        </li>
+        <li data-ruta="PR-G 180" data-nombre="A Cubela" data-salida="Ribas de Sil (Lugo)" data-km="13.39" data-desnivel="721" data-gustos="mirador">
+          <h3>PR-G 180 · A Cubela</h3>
+          <p>El meandro de A Cubela, donde el río casi da la vuelta, junto a una antigua mina romana. La única de la provincia de Lugo.</p>
+          <p class="mapa-datos">Sale de Ribas de Sil (Lugo) · 13,39 km · +721 m</p>
+        </li>
+        <li data-descanso="pueblos" data-nombre="Un día sin mochila: pueblos y monasterios" data-lugares="montederramo:Mosteiro de Montederramo castro_caldelas:Castro Caldelas san_paio:San Paio de Abeleda">
+          <h3>Un día sin mochila: pueblos y monasterios</h3>
+          <p>El mosteiro de Montederramo, el castillo de Castro Caldelas y San Paio de Abeleda, con calma.</p>
+          <p class="mapa-datos">Montederramo · 11 min · Castro Caldelas · 15 min · San Paio de Abeleda · 26 min, en coche</p>
+        </li>
+        <li data-descanso="termas" data-nombre="Un día de termas">
+          <h3>Un día de termas</h3>
+          <p>Pozas de agua caliente al aire libre en Ourense: Chavasqueira, Outariz, As Burgas. Fuera del mapa, a unos 55 minutos.</p>
+          <p class="mapa-datos">Chavasqueira y As Burgas · 55 min, en coche</p>
+        </li>
+      </ol>
+    </details>
+
+    <dialog class="mapa-visor" id="mapa-visor" aria-labelledby="mapa-visor-tit">
+      <h3 class="mapa-visor-tit" id="mapa-visor-tit">Tu mapa</h3>
+      <img class="mapa-visor-img" id="mapa-visor-img" alt="Tu mapa dibujado: las rutas elegidas sobre el relieve, con la leyenda y la casa marcada">
+      <div class="mapa-visor-pie">
+        <a class="mapa-accion" id="mapa-visor-bajar" download="mapa-caserio-da-castineira.png" href="#">Descargar (PNG)</a>
+        <button type="button" class="mapa-accion mapa-accion--sec" id="mapa-visor-cerrar">Cerrar</button>
+      </div>
+    </dialog>
+  </div>
+</section>
+<!-- fin PARTE «Dibuja mi mapa» -->
+
+<!-- PARTE «Un año en la casa» (agente de Secciones: partes/anio.html) -->
+<section id="anio" class="anio" aria-labelledby="t-anio">
+  <div class="anio-env">
+    <header class="anio-cab">
+      <p class="anio-antetitulo">Castiñeira es el castaño</p>
+      <h2 id="t-anio">Un año <em>en la casa</em></h2>
+      <p class="anio-intro">En Galicia el castaño marca el año: brota, florece, da castañas en octubre, se hace magosto en noviembre y se queda desnudo bajo la nieve. Elige un mes y mira cómo está la casa, qué cae del cielo y qué tienes cerca.</p>
+    </header>
+
+    <div class="anio-escena" id="anio-escena">
+      <picture data-foto="nieve"><source type="image/avif" srcset="img/fotos/nieve-480.avif 480w, img/fotos/nieve-800.avif 800w, img/fotos/nieve-1200.avif 1200w" sizes="(min-width: 1240px) 1180px, 100vw"><source type="image/webp" srcset="img/fotos/nieve-480.webp 480w, img/fotos/nieve-800.webp 800w, img/fotos/nieve-1200.webp 1200w" sizes="(min-width: 1240px) 1180px, 100vw"><img src="img/fotos/nieve-800.jpg" srcset="img/fotos/nieve-480.jpg 480w, img/fotos/nieve-800.jpg 800w, img/fotos/nieve-1200.jpg 1200w" sizes="(min-width: 1240px) 1180px, 100vw" width="800" height="600" class="anio-foto" data-est="0" alt="La casa y sus anexos de piedra cubiertos de nieve, entre ramas de roble" loading="lazy" decoding="async"></picture>
+      <picture data-foto="prado"><source type="image/avif" srcset="img/fotos/prado-480.avif 480w, img/fotos/prado-800.avif 800w, img/fotos/prado-1201.avif 1201w" sizes="(min-width: 1240px) 1180px, 100vw"><source type="image/webp" srcset="img/fotos/prado-480.webp 480w, img/fotos/prado-800.webp 800w, img/fotos/prado-1201.webp 1201w" sizes="(min-width: 1240px) 1180px, 100vw"><img src="img/fotos/prado-800.jpg" srcset="img/fotos/prado-480.jpg 480w, img/fotos/prado-800.jpg 800w, img/fotos/prado-1201.jpg 1201w" sizes="(min-width: 1240px) 1180px, 100vw" width="800" height="600" class="anio-foto" data-est="1" alt="La casa de piedra entre prados verdes, con los árboles brotando" loading="lazy" decoding="async"></picture>
+      <picture data-foto="puerta"><source type="image/avif" srcset="img/fotos/puerta-480.avif 480w, img/fotos/puerta-800.avif 800w, img/fotos/puerta-1200.avif 1200w, img/fotos/puerta-1280.avif 1280w" sizes="(min-width: 1240px) 1180px, 100vw"><source type="image/webp" srcset="img/fotos/puerta-480.webp 480w, img/fotos/puerta-800.webp 800w, img/fotos/puerta-1200.webp 1200w, img/fotos/puerta-1280.webp 1280w" sizes="(min-width: 1240px) 1180px, 100vw"><img src="img/fotos/puerta-800.jpg" srcset="img/fotos/puerta-480.jpg 480w, img/fotos/puerta-800.jpg 800w, img/fotos/puerta-1200.jpg 1200w, img/fotos/puerta-1280.jpg 1280w" sizes="(min-width: 1240px) 1180px, 100vw" width="800" height="530" class="anio-foto" data-est="2" alt="Fachada de granito con la puerta roja y hortensias en flor, bajo un cielo azul" loading="lazy" decoding="async"></picture>
+      <picture data-foto="atardecer"><source type="image/avif" srcset="img/fotos/atardecer-480.avif 480w, img/fotos/atardecer-800.avif 800w, img/fotos/atardecer-1080.avif 1080w" sizes="(min-width: 1240px) 1180px, 100vw"><source type="image/webp" srcset="img/fotos/atardecer-480.webp 480w, img/fotos/atardecer-800.webp 800w, img/fotos/atardecer-1080.webp 1080w" sizes="(min-width: 1240px) 1180px, 100vw"><img src="img/fotos/atardecer-800.jpg" srcset="img/fotos/atardecer-480.jpg 480w, img/fotos/atardecer-800.jpg 800w, img/fotos/atardecer-1080.jpg 1080w" sizes="(min-width: 1240px) 1180px, 100vw" width="800" height="370" class="anio-foto" data-est="3" alt="La casa al atardecer, con hojas de otoño anaranjadas" loading="lazy" decoding="async"></picture>
+      <canvas class="anio-cielo" id="anio-cielo" aria-hidden="true"></canvas>
+      <div class="anio-carta" id="anio-carta" aria-live="polite" aria-atomic="true">
+        <p class="anio-est" id="anio-est">Otoño</p>
+        <h3 class="anio-mes" id="anio-mes">Octubre</h3>
+        <p class="anio-txt" id="anio-txt">Castañas y setas. Los castañares se ponen de oro y las viñas del Sil, de rojo. La mejor luz para las rutas del cañón.</p>
+        <ul class="anio-cerca" id="anio-cerca" aria-label="Cerca"><li>Recogida de setas</li><li>Santa Cristina · 38 min</li></ul>
+      </div>
+      <div class="anio-reloj" id="anio-reloj" role="group" aria-label="Meses del año">
+        <p class="anio-centro" aria-hidden="true"><span id="anio-reloj-mes">Octubre</span><small id="anio-reloj-est">Otoño</small></p>
+      </div>
+    </div>
+    <div class="anio-mandos">
+      <button type="button" class="anio-boton" id="anio-pasar" aria-pressed="false" hidden>Pasar el año</button>
+      <button type="button" class="anio-boton" id="anio-hoy" hidden>Ir a hoy</button>
+      <p class="anio-ayuda">Toca un mes en el reloj o recórrelos con las flechas del teclado.</p>
+    </div>
+
+    <!-- Los doce meses: de aquí lee el guion. Sin guion se ven como lista. -->
+    <ol class="anio-meses" id="anio-meses">
+      <li data-mes="0" data-cerca="Manzaneda · 62 min|Estufa en cada estancia"><b>Enero</b> · <i>nieve y estufa</i>. <span>Nieva en la sierra. La estufa de pellets, encendida en cada estancia, y la chimenea del salón común. Cabeza de Manzaneda, para esquiar, a una hora.</span></li>
+      <li data-mes="1" data-cerca="Retiros detox|Montederramo · 11 min"><b>Febrero</b> · <i>retiros y calma</i>. <span>Castaños sin hoja y prados con escarcha. Es el mes de los retiros: dietas detox con salidas guiadas, según el blog de Manolo (aún «próximamente»).</span></li>
+      <li data-mes="2" data-cerca="PR-G 4 · 9,2 km|Castro Caldelas · 15 min"><b>Marzo</b> · <i>el prado verdea</i>. <span>Se acaban las heladas y el prado empieza a verdear. Días más largos para las rutas cortas, como el Camiño Real a San Pedro de Rocas (9 km).</span></li>
+      <li data-mes="3" data-cerca="PR-G 213 · 21 km|Castro Caldelas · 15 min"><b>Abril</b> · <i>brotan los castaños</i>. <span>Brotan los robles y los castaños. La Ruta dos Bosques Máxicos sale de Castro Caldelas, a 15 minutos, y cruza soutos de castaños centenarios.</span></li>
+      <li data-mes="4" data-cerca="PR-G 177 · Mao|Parada de Sil · 28 min"><b>Mayo</b> · <i>ríos llenos</i>. <span>Los prados, altos y verdes, y los ríos llenos: el cañón del Mao con sus pasarelas y la fervenza do Cachón.</span></li>
+      <li data-mes="5" data-cerca="Rabacallos · 43 min|Catamarán por el Sil"><b>Junio</b> · <i>el castaño florece</i>. <span>El castaño florece y las tardes se alargan. El catamarán por el Sil y la playa fluvial de Rabacallos, en Parada de Sil.</span></li>
+      <li data-mes="6" data-cerca="Chavasqueira · 55 min|Doade · 30 min"><b>Julio</b> · <i>noches frescas y pozas</i>. <span>«La temperatura en verano, excelente», dice una reseña: a 917 metros las noches son frescas. Pozas termales, piragüismo y bodegas.</span></li>
+      <li data-mes="7" data-cerca="Montederramo · 11 min|Feria: 12 y 28"><b>Agosto</b> · <i>fiestas y feria</i>. <span>Fiestas de San Roque y la Asunción, del 14 al 16, y la feria de Montederramo los días 12 y 28 de cada mes.</span></li>
+      <li data-mes="8" data-cerca="Viñas · Doade 30 min|Fiesta · 8 sep"><b>Septiembre</b> · <i>vendimia y erizos</i>. <span>Vendimia en la Ribeira Sacra y primeros erizos en los castaños. La fiesta de los Remedios, el 8 de septiembre.</span></li>
+      <li data-mes="9" data-cerca="Recogida de setas|Santa Cristina · 38 min"><b>Octubre</b> · <i>castañas y setas</i>. <span>Castañas y setas. Los castañares se ponen de oro y las viñas del Sil, de rojo. La mejor luz para las rutas del cañón.</span></li>
+      <li data-mes="10" data-cerca="Magosto|Estufa de pellets"><b>Noviembre</b> · <i>magosto</i>. <span>El magosto: castañas asadas en la lumbre, hojarasca en los caminos y la estufa otra vez encendida.</span></li>
+      <li data-mes="11" data-cerca="Vales regalo|Manzaneda · 62 min"><b>Diciembre</b> · <i>vale regalo y nieve</i>. <span>Un vale regalo de la casa, que no caduca: noches, desayunos, cenas o actividades a medida. Y, a veces, la primera nieve.</span></li>
+    </ol>
+
+    <div class="anio-fichas">
+      <article class="anio-ficha">
+        <h3>Fiestas y feria</h3>
+        <dl class="anio-fechas">
+          <div><dt>12 y 28 de cada mes</dt><dd>Feria de Montederramo</dd></div>
+          <div><dt>14 al 16 de agosto</dt><dd>Fiestas de San Roque y la Asunción</dd></div>
+          <div><dt>8 de septiembre</dt><dd>Fiesta de los Remedios</dd></div>
+          <div><dt>Noviembre</dt><dd>Magosto: castañas asadas en la lumbre</dd></div>
+        </dl>
+      </article>
+      <article class="anio-ficha anio-ficha--vale">
+        <h3>Vales regalo</h3>
+        <blockquote class="anio-cita"><p>«Podemos hacerlo todo lo flexible que se quiera, números de noches, desayunos o cenas, actividades… y nos mandáis fotos y texto y os preparamos el vale que no caduca».</p></blockquote>
+        <p class="anio-ficha-pie">Del blog de la casa. Pídelo a Manolo: <span class="anio-tel">609 31 42 35</span> (teléfono y WhatsApp) o <span class="anio-tel">info@acastineira.com</span>.</p>
+      </article>
+    </div>
+    <p class="anio-fuente">Fotos de la casa en cada estación: Booking y el blog de la casa. Fiestas y feria: calendario de Montederramo, por confirmar con Manolo. Minutos en coche desde la casa: OSRM, por confirmar.</p>
+  </div>
+</section>
+<!-- fin PARTE «Un año en la casa» -->
+
+<!-- MANOLO -->
+<section class="manolo" id="manolo" aria-labelledby="t-manolo">
+  <div class="env manolo-rejilla">
+    <figure class="manolo-mapa" data-entra>
+      <picture data-foto="mapa-mano"><source type="image/avif" srcset="img/fotos/mapa-mano-480.avif 480w, img/fotos/mapa-mano-800.avif 800w, img/fotos/mapa-mano-1080.avif 1080w" sizes="(max-width: 899px) 92vw, 46vw"><source type="image/webp" srcset="img/fotos/mapa-mano-480.webp 480w, img/fotos/mapa-mano-800.webp 800w, img/fotos/mapa-mano-1080.webp 1080w" sizes="(max-width: 899px) 92vw, 46vw"><img src="img/fotos/mapa-mano-800.jpg" srcset="img/fotos/mapa-mano-480.jpg 480w, img/fotos/mapa-mano-800.jpg 800w, img/fotos/mapa-mano-1080.jpg 1080w" sizes="(max-width: 899px) 92vw, 46vw" width="800" height="370" alt="Un mapa dibujado a mano con rotuladores de colores, con rutas, pueblos y ríos, sobre la hierba" loading="lazy" decoding="async"></picture>
+      <figcaption>Uno de sus mapas a mano, en una foto de su blog.</figcaption>
+    </figure>
+    <div class="manolo-txt">
+      <p class="eyebrow">Quién te recibe</p>
+      <h2 id="t-manolo">Manolo, <i>y su mapa a mano</i></h2>
+      <blockquote class="manolo-cita"><p>«Soy Manolo y esta casa es mi sueño y en la que intento poner lo mejor de mi.»</p><cite>Manuel Rolán, en Booking</cite></blockquote>
+      <p>Manuel Rolán estudió informática y trabajó como educador social y en programas de voluntariado antes de dedicarse a esta casa. Recorre la Ribeira Sacra caminando o corriendo, la fotografía (muchos de los paisajes de esta web son suyos) y dibuja a mano el mapa de cada huésped, con la ruta del día.</p>
+      <ul class="manolo-datos">
+        <li><b>9,8</b><span>en trato del personal, en Booking</span></li>
+        <li><b>2021</b><span>acompañó a «80 cm» de TVE por la ruta PR-G 98 del cañón do Sil</span></li>
+        <li><b>4</b><span>idiomas: catalán, castellano, gallego e inglés</span></li>
+      </ul>
+      <blockquote><p>«Nuestros mapas se dibujan con cariño, maestría y precisión. Somos guías…»</p><cite>Su blog</cite></blockquote>
+      <blockquote><p>«Conoce la zona a la perfección y te hace mapas para que no te pierdas las zonas más chulas de los alrededores.»</p><cite>Opinión en Escapada Rural</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- EL CLARO EN 3D (lo monta el 3D en #claro) -->
+<section id="claro" class="claro" aria-labelledby="t-claro">
+  <div class="env">
+    <header class="sec-cab">
+      <p class="eyebrow">Dónde está</p>
+      <h2 id="t-claro">El claro, <i>en relieve</i></h2>
+      <p class="entrada">Trece por once kilómetros de terreno real, con la luz de hoy. La casa está sola en su claro, a 917 metros. Al nordeste sube la sierra de A Pena da Cruz, hasta 1.289 metros, con sus aerogeneradores.</p>
+    </header>
+    <div class="claro-pieza">
+      <div class="claro-marco" id="claro-marco">
+        <picture><source type="image/webp" srcset="img/terreno/plano.webp"><img id="claro-plano" src="img/terreno/plano.jpg" alt="Relieve de la meseta de Montederramo y la Serra do Burgo, en plano, con la casa en su claro" loading="lazy" width="1400" height="1179"></picture>
+        <div class="claro-lienzo" id="claro-lienzo"></div>
+        <div class="claro-rotulos" id="claro-rotulos" aria-hidden="true"></div>
+        <button type="button" id="claro-mover" aria-pressed="false" hidden>Mover el mapa</button>
+        <p class="claro-carga" id="claro-carga">Cargando el relieve…</p>
+      </div>
+      <div class="claro-mandos">
+        <div class="claro-hora">
+          <label for="claro-hora">Hora de hoy en A Castiñeira: <b id="claro-hora-txt">--:--</b></label>
+          <input type="range" id="claro-hora" min="0" max="1439" step="1" value="720">
+          <div role="group" aria-label="Momentos del día"><button type="button" data-momento="ahora">Ahora</button><button type="button" data-momento="sale">Amanecer</button><button type="button" data-momento="mediodia">Mediodía</button><button type="button" data-momento="pone">Atardecer</button><button type="button" data-momento="noche">Noche</button></div>
+        </div>
+        <p id="claro-lectura" aria-live="polite"></p>
+        <div class="claro-extras" role="group" aria-label="Qué ver"><button type="button" id="claro-bajar" data-abajo="false">Bajar a la casa</button><button type="button" id="claro-aeros" aria-pressed="true">Aerogeneradores</button></div>
+        <div class="claro-vista" role="group" aria-label="Vista"><button type="button" id="claro-modo-3d" aria-pressed="true">En 3D</button><button type="button" id="claro-modo-plano" aria-pressed="false">En plano</button></div>
+        <p class="fuente">Relieve MDT05 y ortofoto PNOA © IGN (CC BY 4.0). Aerogeneradores: © OpenStreetMap. Altura del relieve ×1,8</p>
+      </div>
+    </div>
+
+    <div class="minutos" id="minutos" aria-labelledby="t-minutos">
+      <h3 id="t-minutos">A cuántos minutos</h3>
+      <p>En coche desde la casa, sin contar paradas.</p>
+      <ol class="minutos-lista" data-entra>
+        <li style="--m:11"><span class="m-sitio">Montederramo <small>el monasterio de Santa María</small></span><span class="m-barra" aria-hidden="true"></span><span class="m-dato">11 min · 7,4 km</span></li>
+        <li style="--m:15"><span class="m-sitio">Castro Caldelas <small>el castillo sobre la villa</small></span><span class="m-barra" aria-hidden="true"></span><span class="m-dato">15 min · 9,5 km</span></li>
+        <li style="--m:26"><span class="m-sitio">San Paio de Abeleda <small>monasterio románico, en ruinas</small></span><span class="m-barra" aria-hidden="true"></span><span class="m-dato">26 min · 16,1 km</span></li>
+        <li style="--m:28"><span class="m-sitio">Parada de Sil <small>el pueblo sobre el cañón</small></span><span class="m-barra" aria-hidden="true"></span><span class="m-dato">28 min · 21,3 km</span></li>
+        <li style="--m:30"><span class="m-sitio">Doade <small>el embarcadero del Sil</small></span><span class="m-barra" aria-hidden="true"></span><span class="m-dato">30 min · 19,6 km</span></li>
+        <li style="--m:38"><span class="m-sitio">Santa Cristina <small>el monasterio románico de Ribas de Sil</small></span><span class="m-barra" aria-hidden="true"></span><span class="m-dato">38 min · 28 km</span></li>
+        <li style="--m:39"><span class="m-sitio">A Pobra de Trives <small>la villa de Terra de Trives</small></span><span class="m-barra" aria-hidden="true"></span><span class="m-dato">39 min · 33,6 km</span></li>
+        <li style="--m:43"><span class="m-sitio">Rabacallos <small>la playa fluvial del Sil</small></span><span class="m-barra" aria-hidden="true"></span><span class="m-dato">43 min · 27,2 km</span></li>
+        <li style="--m:55"><span class="m-sitio">Termas de Ourense <small>Chavasqueira y As Burgas</small></span><span class="m-barra" aria-hidden="true"></span><span class="m-dato">55 min · 50,7 km</span></li>
+        <li style="--m:62"><span class="m-sitio">Cabeza de Manzaneda <small>la estación de esquí</small></span><span class="m-barra" aria-hidden="true"></span><span class="m-dato">62 min · 38,3 km</span></li>
+      </ol>
+      <p class="fuente">Tiempos calculados con OSRM sobre © colaboradores de OpenStreetMap (ODbL), por confirmar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OPINIONES -->
+<section class="opiniones" id="opiniones" aria-labelledby="t-opiniones">
+  <div class="env">
+    <header class="sec-cab">
+      <p class="eyebrow">Opiniones</p>
+      <h2 id="t-opiniones">Casi todos <i>nombran a Manolo</i></h2>
+    </header>
+    <div class="notas">
+      <div class="nota-grande" data-entra>
+        <b>9,2</b>
+        <p>«Fantástico» en Booking<br><span>130 comentarios</span></p>
+      </div>
+      <ul class="desglose" data-entra aria-label="Notas de Booking por apartado">
+        <li style="--n:9.8"><span>Personal</span><i aria-hidden="true"></i><b>9,8</b></li>
+        <li style="--n:9.3"><span>Calidad-precio</span><i aria-hidden="true"></i><b>9,3</b></li>
+        <li style="--n:9.0"><span>Ubicación</span><i aria-hidden="true"></i><b>9,0</b></li>
+        <li style="--n:8.9"><span>Confort</span><i aria-hidden="true"></i><b>8,9</b></li>
+        <li style="--n:8.7"><span>Limpieza</span><i aria-hidden="true"></i><b>8,7</b></li>
+        <li style="--n:8.7"><span>Wifi</span><i aria-hidden="true"></i><b>8,7</b></li>
+        <li style="--n:8.6"><span>Instalaciones</span><i aria-hidden="true"></i><b>8,6</b></li>
+      </ul>
+    </div>
+    <ul class="citas">
+      <li data-entra><blockquote><p>«Manuel es un gran anfitrión, en todo momento te ayuda y recomienda lugares que visitar. El lugar super bonito y tranquilo.»</p><cite>Booking</cite></blockquote></li>
+      <li data-entra><blockquote><p>«Está en mitad de la nada, muy tranquilo. Fuimos con nuestro perro y sin ningún problema, fue muy bienvenido.»</p><cite>Booking</cite></blockquote></li>
+      <li data-entra><blockquote><p>«Muy muy agradable y perfecto para desconectar de todo.»</p><cite>Escapada Rural</cite></blockquote></li>
+      <li data-entra><blockquote><p>«Pasar unos días en esta casa es tener una experiencia de relax y amor por esta tierra que te transmiten los propietarios de este caserío, la comida espectacular y el trato maravilloso»</p><cite>Escapada Rural</cite></blockquote></li>
+    </ul>
+  </div>
+</section>
+
+<!-- RESERVA: motor de DEMOSTRACIÓN (js/reserva.js) -->
+<section class="reserva" id="reserva" aria-labelledby="t-reserva">
+  <div class="env">
+    <header class="sec-cab">
+      <p class="eyebrow">Reservar</p>
+      <h2 id="t-reserva">Mira los días libres <i>y elige puerta</i></h2>
+      <p class="entrada">Cada alojamiento tiene sus días. Elige uno, o la casa entera para un grupo. Los perros no pagan y las cenas veganas se piden con un día de antelación.</p>
+      <p class="demo-aviso"><b>Demostración.</b> Este motor enseña cómo sería reservar en la web: no envía, guarda ni cobra nada, y la ocupación es inventada.</p>
+    </header>
+    <div class="motor" id="motor">
+      <noscript><p>Para reservar, llama o escribe por WhatsApp al <span class="tel-num">609 31 42 35</span>.</p></noscript>
+    </div>
+    <p class="supuestos">Supuestos de la demostración: los precios son los «desde» por persona y noche de casasrurales.net (sin fecha) y se aplican a todas las noches; la ocupación de cada alojamiento es inventada; la casa entera (16 plazas) solo se ofrece las noches sin nadie y con precio a consultar; el precio de las cenas está por confirmar; «pago en la casa» porque Booking indica solo efectivo (una reserva real pediría tarjeta o Bizum).</p>
+  </div>
+</section>
+
+<!-- CÓMO LLEGAR -->
+<section class="llegar" id="llegar" aria-labelledby="t-llegar">
+  <div class="env llegar-rejilla">
+    <div class="llegar-txt">
+      <p class="eyebrow">Cómo llegar</p>
+      <h2 id="t-llegar">A once minutos <i>de Montederramo</i></h2>
+      <address>A Castiñeira, 1 · Sas do Monte<br>32751 Montederramo (Ourense)</address>
+      <ul class="llegar-datos">
+        <li>Sola en su claro, en la parroquia de Sas do Monte, en Terra de Caldelas.</li>
+        <li>Aparcamiento gratis en la casa.</li>
+        <li>Entrada de 15:00 a 22:00.</li>
+        <li>Coordenadas: 42,31216 N · 7,44980 O.</li>
+      </ul>
+      <p class="llegar-tel">Móvil y WhatsApp <span class="tel-num">609 31 42 35</span> <a class="btn-sec" href="tel:+34609314235">Llamar</a></p>
+      <p class="llegar-tel llegar-fijo">Teléfono <span class="tel-num">988 29 21 24</span></p>
+      <p class="llegar-correo">Correo <span class="tel-num">info@acastineira.com</span></p>
+    </div>
+    <div class="mapa-google" id="mapa-google">
+      <button type="button" class="map-consent" id="mapa-btn"
+        data-map-title="Mapa de Google con la ubicación de Caserío da Castiñeira"
+        data-map-src="https://www.google.com/maps?q=42.31216,-7.44980&amp;z=14&amp;output=embed">
+        <svg viewBox="0 0 30 38" aria-hidden="true"><rect class="m" x="1" y="1" width="28" height="36" rx="1"/><rect x="3.5" y="3.5" width="10.5" height="14.5"/><rect x="16" y="3.5" width="10.5" height="14.5"/><rect x="3.5" y="20" width="10.5" height="14.5"/><rect x="16" y="20" width="10.5" height="14.5"/></svg>
+        <b>Ver el mapa</b>
+        <span>Al pulsar se carga un mapa de Google, que puede guardar sus propias cookies.</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- PIE: la ventana entera, encendida sobre el muro de noche -->
+<footer class="pie" id="pie">
+  <div class="pie-ventana" id="pie-ventana">
+    <svg viewBox="0 0 600 300" aria-hidden="true">
+      <defs>
+        <radialGradient id="pie-halo-g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f0a36a" stop-opacity=".42"/><stop offset=".5" stop-color="#f0a36a" stop-opacity=".1"/><stop offset="1" stop-color="#f0a36a" stop-opacity="0"/></radialGradient>
+        <linearGradient id="pie-vidrio-g" x1="0" y1="0" x2=".4" y2="1"><stop offset="0" stop-color="#ffcf8a"/><stop offset=".55" stop-color="#ffb765"/><stop offset="1" stop-color="#e98a3c"/></linearGradient>
+      </defs>
+      <g class="pie-piedras">
+        <path d="M0 20 H96 L104 58 H0 Z M108 18 H214 L208 60 H112 Z M218 22 H330 L326 56 H214 Z M334 20 H452 L458 58 H330 Z M456 18 H600 V60 H462 Z"/>
+        <path d="M0 64 H58 L64 112 H0 Z M68 66 H178 L172 110 H62 Z M444 66 H540 L546 112 H440 Z M550 64 H600 V112 H550 Z"/>
+        <path d="M0 116 H124 L118 164 H0 Z M466 116 H600 V166 H470 Z"/>
+        <path d="M0 168 H70 L78 214 H0 Z M82 170 H186 L180 216 H82 Z M418 170 H520 L526 214 H414 Z M530 168 H600 V214 H528 Z"/>
+        <path d="M0 220 H132 L126 268 H0 Z M136 222 H262 L256 268 H130 Z M340 222 H470 L476 266 H336 Z M480 220 H600 V268 H480 Z"/>
+        <path d="M0 272 H60 V300 H0 Z M64 274 H210 V300 H64 Z M214 274 H388 V300 H214 Z M392 274 H530 V300 H392 Z M534 272 H600 V300 H534 Z"/>
+      </g>
+      <ellipse class="pie-halo" cx="300" cy="150" rx="210" ry="150" fill="url(#pie-halo-g)"/>
+      <rect class="pie-dintel" x="222" y="54" width="156" height="14"/>
+      <rect class="pie-marco" x="234" y="68" width="132" height="168"/>
+      <rect class="pie-cristal" data-n="1" x="242" y="76" width="54" height="74" fill="url(#pie-vidrio-g)"/>
+      <rect class="pie-cristal" data-n="2" x="304" y="76" width="54" height="74" fill="url(#pie-vidrio-g)"/>
+      <rect class="pie-cristal" data-n="3" x="242" y="154" width="54" height="74" fill="url(#pie-vidrio-g)"/>
+      <rect class="pie-cristal" data-n="4" x="304" y="154" width="54" height="74" fill="url(#pie-vidrio-g)"/>
+      <path class="pie-contra" d="M234 68 L196 74 V230 L234 236 Z M366 68 L404 74 V230 L366 236 Z"/>
+      <rect class="pie-alfeizar" x="222" y="236" width="156" height="12"/>
+    </svg>
+  </div>
+  <div class="env pie-cuerpo">
+    <div class="pie-marca">
+      <p class="pie-nombre">Caserío <i>da</i> Castiñeira</p>
+      <p>A Castiñeira, 1 · Sas do Monte<br>32751 Montederramo (Ourense)</p>
+      <p>Móvil y WhatsApp <span class="tel-num">609 31 42 35</span></p>
+    </div>
+    <nav class="pie-enlaces" aria-label="Información legal">
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="cookies.html">Cookies</a>
+      <a href="accesibilidad.html">Accesibilidad</a>
+      <button type="button" class="pie-cookies" id="abrir-cookies">Preferencias de cookies</button>
+    </nav>
+    <div class="pie-creditos">
+      <p>Turismo rural · registro <b>TR-OR-000017</b></p>
+      <p>Relieve MDT05 y ortofoto PNOA © Instituto Geográfico Nacional (CC BY 4.0). Lugares, rutas y aerogeneradores: © colaboradores de OpenStreetMap; tiempos en coche, OSRM.</p>
+      <p>Fotos de la casa y de su blog.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- barra fija del móvil: aparece al dejar la portada -->
+<div class="barra" id="barra">
+  <p><b>5 alojamientos</b> · hasta 16 personas</p>
+  <a class="btn" href="#reserva">Ver fechas</a>
+</div>
+
+<div class="cookies" id="cookies" role="region" aria-label="Aviso de cookies" hidden>
+  <p>Esta web no usa cookies de análisis ni de publicidad. Solo guarda en tu navegador que has visto este aviso. Las letras se cargan de Google Fonts y el mapa de Google solo si lo pides. <a href="cookies.html">Más información</a></p>
+  <div class="cookies-botones">
+    <button type="button" class="btn" id="ck-si">Entendido</button>
+    <button type="button" class="btn-sec" id="ck-no">Cerrar</button>
+  </div>
+</div>
+
+<!-- MANDO DE MAQUETA: solo con ?revision. Receta de borrado en el README -->
+<div class="mando" id="mando" role="group" aria-label="Dos versiones de la misma web" hidden>
+  <p>Versión</p>
+  <button type="button" data-densidad="cargada" aria-pressed="true">Somos</button>
+  <button type="button" data-densidad="sobria" aria-pressed="false">Sobria</button>
+</div>
+<!-- fin del MANDO DE MAQUETA -->
+
+<script src="js/reserva.js?v=abcb57b7" defer></script>
+<script src="js/main.js?v=bad5cf99" defer></script>
+<script src="js/mapa.js?v=a7aedd1c" defer></script>
+<script src="js/anio.js?v=41e79d98" defer></script>
+<script type="module" src="js/3d/arranque.js?v=1ef2f987" onerror="window.__castineira3dFallo &amp;&amp; window.__castineira3dFallo()"></script>
+</body>
+</html>

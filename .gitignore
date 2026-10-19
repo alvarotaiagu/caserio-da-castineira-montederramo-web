@@ -1,0 +1,10 @@
+# solo en local: capturas, temporales, las preguntas para la casa y el encargo interno
+# (las pruebas del 3D y de las secciones sí viajan: sus generadores y sus bancos)
+pruebas/*
+!pruebas/3d-*.mjs
+!pruebas/3d-banco.html
+!pruebas/sec-*.mjs
+!pruebas/sec-banco.html
+node_modules/
+PENDIENTES.md
+ENCARGO.md

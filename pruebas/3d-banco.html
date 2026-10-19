@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banco del 3D · Caserío da Castiñeira</title>
+<link rel="icon" href="data:,">
+<!-- Banco propio del agente 3D: reproduce el marcado del contrato (ENCARGO.md, «Contrato web ↔ 3D») con estilos mínimos.
+     No es la web. ?cortina=0 manda la señal al momento; ?cortina=N la manda a los N ms (por defecto 1500). -->
+<link rel="stylesheet" href="../css/3d.css">
+<style>
+  :root { --noche: #080d18; --noche-2: #101a2e; --alba: #f0a36a; --luz: #f3e8d8; --cal: #f1ebdd; --granito: #1f1e1c; --teja: #c2502d; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; background: var(--cal); color: var(--granito); }
+  .portada { position: relative; min-height: 100svh; background: var(--noche); color: var(--luz); overflow: hidden; }
+  .vuelo { position: absolute; inset: 0; }
+  .vuelo picture, .vuelo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .portada-texto { position: relative; z-index: 2; padding: 34svh 6vw 0; max-width: 46rem; pointer-events: none; }
+  .portada-texto h1 { font: 400 clamp(2.2rem, 6vw, 4.4rem)/1.02 Georgia, serif; margin: 0 0 .6rem; text-shadow: 0 2px 18px rgb(0 0 0 / .5); }
+  .portada-texto h1 i { color: var(--alba); }
+  .portada-texto p { max-width: 30rem; text-shadow: 0 1px 8px rgb(0 0 0 / .6); }
+  .altimetro { position: absolute; z-index: 2; right: 4vw; top: 20svh; height: 50svh; width: 9rem; font: 12px ui-monospace, monospace; }
+  .altimetro .regla { position: absolute; right: 0; top: 0; bottom: 0; width: 2px; background: rgb(243 232 216 / .4); }
+  .altimetro .regla i { position: absolute; right: 8px; top: var(--y); transform: translateY(-50%); font-style: normal; white-space: nowrap; opacity: .8; }
+  .altimetro .aguja { position: absolute; right: -6px; width: 14px; height: 2px; background: var(--alba); top: 13%; transition: top .2s linear; }
+  .altimetro b { display: block; font-size: 15px; }
+  .chip { position: absolute; z-index: 2; left: 6vw; bottom: 16svh; margin: 0; padding: .35rem .8rem; border-radius: 99px; background: rgb(8 13 24 / .65); font: 13px ui-monospace, monospace; }
+  #vuelo-pausa { position: absolute; z-index: 2; right: 4vw; bottom: 16svh; font: inherit; color: var(--luz); background: rgb(8 13 24 / .65); border: 1px solid rgb(243 232 216 / .3); border-radius: 99px; padding: .4rem .9rem; }
+  #vuelo-pausa[data-pausa="true"]::before { content: "▶ "; }
+  @media (max-width: 700px) { .portada-texto { padding-top: 52svh; } .chip { bottom: 22svh; } #vuelo-pausa { bottom: 28svh; } .altimetro { top: 14svh; height: 30svh; } }
+  .reserva { position: absolute; z-index: 2; left: 6vw; right: 6vw; bottom: 4svh; display: flex; gap: .5rem; flex-wrap: wrap; background: rgb(241 235 221 / .95); color: var(--granito); padding: .6rem; border-radius: 10px; }
+  .reserva input, .reserva button { font: inherit; padding: .35rem .5rem; }
+  .relleno { padding: 4rem 6vw; min-height: 120vh; }
+  .claro { background: var(--noche); color: var(--luz); padding: 4rem 6vw; }
+  .claro-marco { position: relative; aspect-ratio: 16 / 10; max-height: 80svh; width: 100%; border-radius: 12px; overflow: hidden; background: #060a12; }
+  @media (max-width: 700px) { .claro-marco { aspect-ratio: 4 / 5; } }
+  .claro-marco picture { position: absolute; inset: 0; }
+  #claro-plano { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+  .claro-lienzo, .claro-rotulos { position: absolute; inset: 0; }
+  #claro-mover { position: absolute; z-index: 3; right: .8rem; top: .8rem; }
+  .claro-carga { position: absolute; z-index: 3; left: 50%; bottom: 1rem; transform: translateX(-50%); margin: 0; background: rgb(8 13 24 / .8); padding: .3rem .8rem; border-radius: 99px; }
+  .claro-carga[hidden] { display: none; }
+  .claro:not(.con-3d) .claro-hora, .claro:not(.con-3d) #claro-lectura, .claro:not(.con-3d) [aria-label="Vista"], .claro:not(.con-3d) [aria-label="Qué ver"] { display: none; }
+  .claro-mandos button[aria-pressed="true"], #claro-bajar[data-abajo="true"] { background: var(--teja); color: #fff; }
+  .claro-hora input { width: min(100%, 36rem); }
+  .cortina { position: fixed; inset: 0; z-index: 10; background: var(--noche); transition: opacity .6s; }
+  .cortina-fuera .cortina { opacity: 0; pointer-events: none; }
+</style>
+</head>
+<body>
+<div class="cortina" aria-hidden="true"></div>
+<header class="portada" id="portada">
+  <div class="vuelo" id="vuelo">
+    <picture>
+      <source type="image/avif" media="(max-aspect-ratio: 1/1)" srcset="../img/terreno/poster-vuelo-movil-600.avif 600w, ../img/terreno/poster-vuelo-movil-900.avif 900w" sizes="100vw">
+      <source type="image/webp" media="(max-aspect-ratio: 1/1)" srcset="../img/terreno/poster-vuelo-movil-600.webp 600w, ../img/terreno/poster-vuelo-movil-900.webp 900w" sizes="100vw">
+      <source media="(max-aspect-ratio: 1/1)" srcset="../img/terreno/poster-vuelo-movil-600.jpg 600w, ../img/terreno/poster-vuelo-movil-900.jpg 900w" sizes="100vw">
+      <source type="image/avif" srcset="../img/terreno/poster-vuelo-1280.avif 1280w, ../img/terreno/poster-vuelo-1920.avif 1920w" sizes="100vw">
+      <source type="image/webp" srcset="../img/terreno/poster-vuelo-1280.webp 1280w, ../img/terreno/poster-vuelo-1920.webp 1920w" sizes="100vw">
+      <img id="vuelo-poster" src="../img/terreno/poster-vuelo.jpg" srcset="../img/terreno/poster-vuelo-1280.jpg 1280w, ../img/terreno/poster-vuelo-1920.jpg 1920w" sizes="100vw" alt="La sierra de A Pena da Cruz y sus molinos vistos desde el aire, con el claro de la casa al fondo" fetchpriority="high" width="1280" height="720">
+    </picture>
+  </div>
+  <div class="portada-texto">
+    <h1>A 917 metros, <i>una casa en su claro</i></h1>
+    <p>Texto corto del banco: un caserío de piedra entre prados, muros y castaños, a los pies de la Serra do Burgo.</p>
+  </div>
+  <div class="altimetro" aria-hidden="true"><span>Altitud</span> <b id="altimetro-valor">917 m</b>
+    <div class="regla"><i style="--y:13%">Pena da Cruz · 1.289 m</i><i style="--y:47%">Casa · 917 m</i><i style="--y:86%">Valle · 488 m</i><span class="aguja" id="altimetro-aguja"></span></div></div>
+  <p class="chip" id="ahora-castineira">42,312° N · 7,450° O · 917 m</p>
+  <button type="button" id="vuelo-pausa" aria-pressed="false" hidden>Pausar el vuelo</button>
+  <form class="reserva" onsubmit="return false"><label>Llegada <input type="date"></label><label>Salida <input type="date"></label><button>Ver disponibilidad</button></form>
+</header>
+
+<section class="relleno"><h2>Relleno</h2><p>Secciones de la web entre la portada y el claro.</p></section>
+
+<section id="claro" class="claro" aria-labelledby="t-claro">
+  <h2 id="t-claro">El claro en 3D</h2>
+  <p>Trece por once kilómetros de relieve real.</p>
+  <div class="claro-marco" id="claro-marco">
+    <picture>
+      <source type="image/webp" srcset="../img/terreno/plano.webp">
+      <img id="claro-plano" src="../img/terreno/plano.jpg" alt="Relieve de la sierra de A Pena da Cruz y el claro de A Castiñeira, en plano" loading="lazy" width="1400" height="1179">
+    </picture>
+    <div class="claro-lienzo" id="claro-lienzo"></div>
+    <div class="claro-rotulos" id="claro-rotulos" aria-hidden="true"></div>
+    <button type="button" id="claro-mover" aria-pressed="false" hidden>Mover el mapa</button>
+    <p class="claro-carga" id="claro-carga">Cargando el relieve…</p>
+  </div>
+  <div class="claro-mandos">
+    <div class="claro-hora">
+      <label for="claro-hora">Hora de hoy en A Castiñeira: <b id="claro-hora-txt">--:--</b></label>
+      <input type="range" id="claro-hora" min="0" max="1439" step="1" value="720">
+      <div role="group" aria-label="Momentos del día"><button type="button" data-momento="ahora">Ahora</button><button type="button" data-momento="sale">Amanecer</button><button type="button" data-momento="mediodia">Mediodía</button><button type="button" data-momento="pone">Atardecer</button><button type="button" data-momento="noche">Noche</button></div>
+    </div>
+    <p id="claro-lectura" aria-live="polite"></p>
+    <div role="group" aria-label="Qué ver"><button type="button" id="claro-bajar">Bajar a la casa</button><button type="button" id="claro-aeros" aria-pressed="true">Aerogeneradores</button></div>
+    <div role="group" aria-label="Vista"><button type="button" id="claro-modo-3d" aria-pressed="true">En 3D</button><button type="button" id="claro-modo-plano" aria-pressed="false">En plano</button></div>
+    <p class="fuente">Relieve MDT05 y ortofoto PNOA © IGN (CC BY 4.0). Aerogeneradores: © OpenStreetMap. Altura del relieve ×1,8</p>
+  </div>
+</section>
+<section class="relleno"><h2>Después</h2></section>
+
+<script>
+  // Simula la cortina de la web: al empezar a crecer la ventana, clase y evento
+  (() => {
+    const q = new URLSearchParams(location.search).get('cortina'), ms = q == null ? 1500 : +q;
+    const fuera = () => { document.documentElement.classList.add('cortina-fuera'); document.dispatchEvent(new Event('castineira:cortina-fuera')); };
+    if (ms <= 0) fuera(); else setTimeout(fuera, ms);
+  })();
+</script>
+<script type="module" src="../js/3d/arranque.js"></script>
+</body>
+</html>
